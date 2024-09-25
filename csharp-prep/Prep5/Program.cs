@@ -4,9 +4,67 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep5 World!");
+        // Call welcome function
+        DisplayWelcomeMessage();
+
+        // Call user name function
+        string name = PromptUserName();
+
+        // Call user fav number function
+        int number = PromptUserNumber();
+
+        //Call squaring function
+        int squaredNumber = SquareNumber(number);
+
+        // Call Accept/Display the results function
+        DisplayResult(name, squaredNumber);
+        
     }
+
+    // Display welcome function
+    static void DisplayWelcomeMessage()
+    {
+        Console.WriteLine("Welcome to the program!");
+    }
+
+    // Prompt for user name function
+    static string PromptUserName()
+    {
+        Console.Write("Please enter your name: ");
+        string userName = Console.ReadLine(); // With C# we seem to not need to pre-define variables from loops?? Maybe maybe not
+        
+        return userName;
+    }
+
+    // Prompt for user fav number function
+    static int PromptUserNumber()
+    {
+        Console.Write("Please enter your favorite number: ");
+        int userNumber = int.Parse(Console.ReadLine()); // A smaller way to change the string to an integer
+        
+        return userNumber;
+    }
+
+    // Function that accepts an integer for a parameter, and returns that same number squared (as an integer)
+    static int SquareNumber(int number) //It appears we probably can use the same characters for the parameters, as variables outside the function... (I think I use both the same and different names, I guess as an example)
+    {
+        int numberSquared = number * number;
+        
+        return numberSquared;
+    }
+
+    // Accept/Display the results function
+    static void DisplayResult(string userName, int userNumberSquared)
+    {
+        Console.Write($"{userName}, the square of your number is {userNumberSquared}");    
+    }
+
+
+
+    
 }
+
+// Notes belowwwww
 
 /* 
 General structure of a function: 
