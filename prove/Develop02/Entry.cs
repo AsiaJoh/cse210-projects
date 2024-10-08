@@ -10,10 +10,11 @@ public class Entry
 
     public void DisplayEntry() // (Public?) Class functions (or methods) like this use TitleCase for their names
     {
-        // Display the user's journal entries of the past and present(?)
+        
+        
+        // Display the user's journal entries of the past and present(?) Or just display what you want to write now?
         Console.Write("> ");
         string journalEntry = Console.ReadLine();
-
     }
 
     public void SaveEntry()
