@@ -17,11 +17,18 @@ public class Entry
         string journalEntry = Console.ReadLine();
     }
 
-    public void SaveEntry()
+    public void SaveEntry(journalEntry)
     {
         // Save the user's journal entry to a file
 
         // Prompt for the file name
-        // Save to that file
+        Console.WriteLine("What will the name of your file be? ");
+        string journalName = Console.ReadLine();
+
+        // string path = "C://";
+
+        // Save to the content to the file
+        // Format for the below is (path, content)
+        File.WriteAllText(journalName, journalEntry);
     }
 }
