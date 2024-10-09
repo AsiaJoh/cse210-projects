@@ -5,7 +5,7 @@ public class Journal
     public List<string> _prompts = new List<string>() {"Who was the most interesting person I interacted with today?", "What was the best part of my day?", "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?"}; // The data type is what goes inside the <> for the list
     public List<string> _entries = new List<string>();
 
-    public void DisplayEntry() // (Public?) Class functions (or methods) like this use TitleCase for their names
+    public void DisplayPrompt() // (Public?) Class functions (or methods) like this use TitleCase for their names
     {
         // Display a random prompt?? (Otherwise this would be redundant)
 
@@ -30,7 +30,7 @@ public class Journal
         // The file path is specified by the file name, the parameter
 
         // Read the lines from the file into a string array
-        string[] fileArray = File.ReadAllLines(file);
+        string[] fileArray = System.IO.File.ReadAllLines(file);
 
         // Convert the string array to a list
         List<string> fileContent = fileArray.ToList();

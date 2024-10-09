@@ -33,7 +33,7 @@ public class Entry
         Journal journal = new Journal();
 
         // Call the repurposed prompt function
-        journal.DisplayEntry();
+        journal.DisplayPrompt();
 
         Console.Write("> ");
             string _content = Console.ReadLine();
