@@ -10,29 +10,31 @@ public class Entry
 
     // Now for the Class's functions (or the methods)
 
-    public void DisplayEntry() // (Public?) Class functions (or methods) like this use TitleCase for their names
+    public void GetEntry()
+        {
+            // Display the entries you've made in this session thus far (the list), OR retrieve a specific entry from the list? But that would require paramaters so probably not.
+            
+            // Make an instance of the Journal Class to use the entries list within it
+            Journal journal = new Journal();
+
+            // Print the entries list (edit fanciness later?)
+            foreach (string entry in journal._entries)
+            {
+                Console.WriteLine(entry);
+            }
+        }
+
+    public void SaveEntry()
     {
-        
-        
-        // Display the user's journal entries of the past and present(?) Or just display what you want to write now?
+        // Goal: Start a new entry, and save the user's entry to the list of entries? (Perhaps the above function just tries to show the gathered entries, not add or save them?)
+
         Console.Write("> ");
-        string _content = Console.ReadLine();
-    }
+            string _content = Console.ReadLine();
 
-    public string SaveEntry(string journalEntry)
-    {
-        // Goal: Save the user's journal entry to a file
+            // Make an instance of the Journal Class to use the entries list within it
+            Journal journal = new Journal();
 
-        // Prompt for the file name
-        Console.WriteLine("What will the name of your file be? ");
-        _fileName = Console.ReadLine();
-
-        // string path = "C://"; 
-
-        // Save to the content to the file
-        // Format for the below is (path, content) 
-        File.WriteAllText(_fileName, journalEntry); // <-- Somehow I doubt this'll actually work...
-
-        return _fileName;
+            // Append the new entry to the entries list within Journal
+            journal._entries.Add(_content);
     }
 }
