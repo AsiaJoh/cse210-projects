@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 
 public class Entry
 {
@@ -28,11 +29,14 @@ public class Entry
     {
         // Goal: Start a new entry, and save the user's entry to the list of entries? (Perhaps the above function just tries to show the gathered entries, not add or save them?)
 
+        // Instance the Journal Class to use what it contains
+        Journal journal = new Journal();
+
+        // Call the repurposed prompt function
+        journal.DisplayEntry();
+
         Console.Write("> ");
             string _content = Console.ReadLine();
-
-            // Make an instance of the Journal Class to use the entries list within it
-            Journal journal = new Journal();
 
             // Append the new entry to the entries list within Journal
             journal._entries.Add(_content);

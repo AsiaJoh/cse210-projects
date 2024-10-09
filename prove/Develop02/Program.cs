@@ -23,6 +23,12 @@ class Program
             if (option == 1)
             {
                 // Start the process of writing a new entry
+
+                // First create an instance of the necessary class
+                Entry entry = new Entry();
+
+                // Call the needed function
+                entry.SaveEntry()
             }
             else if (option == 2)
             {

@@ -2,12 +2,24 @@ using System;
 
 public class Journal
 {
-    public List<string> _prompts = new List<string>(); // The data type is what goes inside the <> for the list
+    public List<string> _prompts = new List<string>() {"Who was the most interesting person I interacted with today?", "What was the best part of my day?", "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?"}; // The data type is what goes inside the <> for the list
     public List<string> _entries = new List<string>();
 
     public void DisplayEntry() // (Public?) Class functions (or methods) like this use TitleCase for their names
     {
-        // Display the user's journal entries of the past (said entries which are saved to a list)
+        // Display a random prompt?? (Otherwise this would be redundant)
+
+        // Create a random object? This must be a built-in or easy-access class
+        Random random = new Random();
+
+        // Create a random index within the list's range
+        int randomIndex = random.Next(_prompts.Count);
+
+        // Retrieve whatever is at that random index
+        string randomPrompt = _prompts[randomIndex];
+
+        // Print said random prompt
+        Console.WriteLine(randomPrompt);
         
     }
 
