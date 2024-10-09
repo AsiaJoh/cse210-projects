@@ -23,7 +23,8 @@ public class Journal
         
     }
 
-    public static List<string> LoadJournal(string file)
+    // public static List<string> LoadJournal(string file)
+    public void LoadJournal(string file)
     {
         // Goal: Display a previously saved text file
         // The file path is specified by the file name, the parameter
@@ -39,8 +40,8 @@ public class Journal
         {
             Console.WriteLine(line);
         }
-
-        return fileContent; // Not sure if I'll be needing this but here it is
+        // Not sure if I'll be needing this but here it is
+        // return fileContent; 
     }
 
     public void SaveJournal() // No need for this to have the filename parameter, it asks for a name within the function

@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -24,23 +25,48 @@ class Program
             {
                 // Start the process of writing a new entry
 
-                // First create an instance of the necessary class
+                // Create an instance of the necessary class
                 Entry entry = new Entry();
 
                 // Call the needed function
-                entry.SaveEntry()
+                entry.SaveEntry();
             }
             else if (option == 2)
             {
                 // Display the entries of the day thus far
+
+                // Create an instance of the necessary class
+                Entry entry = new Entry();
+                
+                // Call the needed function
+                entry.GetEntry();
             }
+
             else if (option == 3)
             {
                 // Ask for the name of the file to load, and then load it
+                
+                // Create an instance of the necessary class
+                Journal journal = new Journal();
+
+                // Ask for file name
+                Console.Write("What is the filename? ");
+                string file = Console.ReadLine();
+                
+                // Call the needed function
+                // string fileContent = journal.LoadJournal(file);
+                journal.LoadJournal(file);
+
             }
             else if (option == 4)
             {
-                // Prompt user for fiel name, and save current entries to that file 
+                // Prompt user for file name, and save current entries to that file 
+
+                // Create an instance of the necessary class
+                Journal journal = new Journal();
+                
+                // Call the needed function
+                journal.SaveJournal();
             }
             else
             {
