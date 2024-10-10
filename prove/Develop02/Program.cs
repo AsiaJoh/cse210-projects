@@ -17,11 +17,11 @@ class Program
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");
-            string stringOption = Console.ReadLine();
+            string option = Console.ReadLine();
 
-            int option = int.Parse(stringOption);
+            
 
-            if (option == 1)
+            if (option == "1")
             {
                 // Start the process of writing a new entry
 
@@ -31,7 +31,7 @@ class Program
                 // Call the needed function
                 entry.SaveEntry();
             }
-            else if (option == 2)
+            else if (option == "2")
             {
                 // Display the entries of the day thus far
 
@@ -42,7 +42,7 @@ class Program
                 entry.GetEntry();
             }
 
-            else if (option == 3)
+            else if (option == "3")
             {
                 // Ask for the name of the file to load, and then load it
                 
@@ -58,7 +58,7 @@ class Program
                 journal.LoadJournal(file);
 
             }
-            else if (option == 4)
+            else if (option == "4")
             {
                 // Prompt user for file name, and save current entries to that file 
 
