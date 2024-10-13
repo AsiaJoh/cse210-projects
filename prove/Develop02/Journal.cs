@@ -21,7 +21,7 @@ public class Journal
         Console.Write("> ");
 
         // Return the prompt, so it can also be stored in the file (as that is a different location)
-        return randomPrompt
+        return randomPrompt;
     }
 
     // public static List<string> LoadJournal(string file)
