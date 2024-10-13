@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.CompilerServices;
+using System.IO;
 
 public class Entry
 {
@@ -28,17 +29,29 @@ public class Entry
     public void SaveEntry()
     {
         // Goal: Start a new entry, and save the user's entry to the list of entries? (Perhaps the above function just tries to show the gathered entries, not add or save them?)
+        // New Goal: Start a new entry, and save it to a file
 
         // Instance the Journal Class to use what it contains
         Journal journal = new Journal();
+        
+        // Give a value/title to the variable holding the file we'll save to
+        _fileName = "myFile.txt";
 
-        // Call the repurposed prompt function
-        journal.DisplayPrompt();
+        // Instance the streamwriter class(?) in a "using" block so that things close once we're done.
+        using (StreamWriter outputFile = new StreamWriter(_fileName))
+        {
+            // Paste in the date, for the file's sake
+            DateTime theCurrentTime = DateTime.Now;
+            string dateText = theCurrentTime.ToShortDateString();
 
-        Console.Write("> ");
-            string _content = Console.ReadLine();
+            // Call the repurposed prompt function
+            string randomPrompt = journal.DisplayPrompt();
 
-            // Append the new entry to the entries list within Journal
-            journal._entries.Add(_content);
+            // Put the prompt into the file
+            outputFile.WriteLine(randomPrompt);
+            
+            outputFile.Write("> ");
+            _content = Console.ReadLine(); // This goes to the console, but the rest goes to the file
+        }
     }
 }
