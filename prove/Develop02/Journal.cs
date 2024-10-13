@@ -31,10 +31,13 @@ public class Journal
         // The file path is specified by the file name, the parameter
 
         // Read the lines from the file into a string array
-        string[] fileArray = System.IO.File.ReadAllLines(file); // Why is it not registering the system.io thing 
+        string[] fileArray = System.IO.File.ReadAllLines(file); // Why is it not registering the system.io
+
+        // Convert the string array to a list
+        List<string> fileContent = fileArray.ToList();
 
         // Print the content
-        foreach (string line in fileArray)
+        foreach (string line in fileContent)
         {
             Console.WriteLine(line);
         }
