@@ -36,7 +36,7 @@ public class Journal
         // List<string> fileContent = fileArray.ToList();
 
         // Print the content
-        foreach (string line in file)
+        foreach (string line in fileArray)
         {
             Console.WriteLine(line);
         }
