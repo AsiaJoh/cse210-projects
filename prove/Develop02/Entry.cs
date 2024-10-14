@@ -43,7 +43,7 @@ public class Entry
         _content = Console.ReadLine();
 
         // Go ahead and add these three things as one to the entries list
-        // Entry stringCombined = $"{_date}|{_prompt}|{_content}";
-        // journal._entries.Add(stringCombined)
+        Entry stringCombined = $"{_date}|{_prompt}|{_content}";
+        journal._entries.Add(stringCombined);
     }
 }
