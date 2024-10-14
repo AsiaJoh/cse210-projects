@@ -58,7 +58,7 @@ public class Journal
         // Goal: Display a previously saved text file
         // The file path is specified by the file name
 
-        List<Entry> loadedJournal = new List<Entry>(); // Making a new instance of the entries list(?)
+        List<Entry> loadedJournal = new List<Entry>(); // Making a new instance of the entries list
         
         // Ask for file name
         Console.Write("What is the filename? ");
@@ -70,23 +70,26 @@ public class Journal
         // Output the content
         foreach (string line in fileArray)
         {
-            // Instance the Entry class
-            Entry entry = new Entry();
-
-            // The file should have been stored as a funky string split by |. Now we're going to split the pieces between the "|" into a list whose parts we can use.
+            // The file pieces should have been stored as a funky string split by |. Now we're going to split the pieces between the "|" into a list whose parts we can use.
             string[] parts = line.Split("|"); //That is, if it would ever worK
             string date = parts[0];
             string prompt = parts[1];
             string answer = parts[2];
 
+            // Instance the Entry class
+            Entry entry = new Entry();
+
+            // Assign the parts to new pieces in the entry class
             entry._date = date;
             entry._prompt = prompt;
             entry._content = answer;
 
-            loadedJournal.Add(entry); // Adding the entry class to the new list for future use(?)
+            loadedJournal.Add(entry); // Adding the entry class to the new list, so it can be displayed later
         }
         
-        _entries = loadedJournal;
+        _entries = loadedJournal; // equivicate this loadedJournal list to the entries list, so that we can display it
+
+        DisplayJournal();
     }
 
     public void WriteEntry()
