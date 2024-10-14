@@ -31,7 +31,7 @@ class Program
                 // Start the process of writing a new entry
 
                 // Call the needed function
-                entry.WriteEntry();
+                journal.WriteEntry();
             }
             else if (option == "2")
             {

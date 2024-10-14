@@ -88,4 +88,29 @@ public class Journal
         
         _entries = loadedJournal;
     }
+
+    public void WriteEntry()
+    {
+        // Goal: Start a new entry, and save the user's entry to the list of entries
+        // New Goal: Start a new entry, and save it to a file
+
+        // Instance the Journal Class to use what it contains
+        Entry entry = new Entry();
+
+        // Display the user's prompt to the console
+        entry._prompt = DisplayPrompt();
+        Console.Write("> ");
+  
+        // Retrieve the date
+        DateTime theCurrentTime = DateTime.Now;
+        entry._date = theCurrentTime.ToShortDateString();
+
+        // Prompt was already retrieved upon display
+
+        // Retrieve the user's entry
+        entry._content = Console.ReadLine();
+
+        // Add the entry instantiation to the list
+        _entries.Add(entry);
+    }
 }
