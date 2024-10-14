@@ -2,7 +2,12 @@ using System;
 using System.IO;
 public class Journal
 {
-    public List<string> _prompts = new List<string>() {"Who was the most interesting person I interacted with today?", "What was the best part of my day?", "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?"}; // The data type is what goes inside the <> for the list
+    public List<string> _prompts = new List<string>() {"Who was the most interesting person I interacted with today?", "What was the best part of my day?", 
+    "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?",
+     "What is the most frustrating thing you did today?", "What is the hardest thing you did today?", "What is one thing you're grateful/happy for right now?", 
+     "What was the scariest thing you did today?", "What part of the day did/do you most look forward to?", 
+     "What is a secondary 'to-do' you need to complete soon? A primary one?", "Of the songs you heard today, which was your favorite and why?"}; 
+     // The data type is what goes inside the <> for the list
     public List<Entry> _entries = new List<Entry>();
 
     public string DisplayPrompt() // (Public?) Class functions (or methods) like this use TitleCase for their names
