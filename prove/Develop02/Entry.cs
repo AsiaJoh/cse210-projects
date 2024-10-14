@@ -42,24 +42,8 @@ public class Entry
         // Retrieve the user's entry
         _content = Console.ReadLine();
 
-        // No need to "save" these guys anywhere, I think that's done in the other functions(?)
+        // Go ahead and add these three things as one to the entries list
+        // Entry stringCombined = $"{_date}|{_prompt}|{_content}";
+        // journal._entries.Add(stringCombined)
     }
-
-    // public void SaveEntry(string fileName)
-    // {
-    //     // New Goal: Save the entry list to a file
-
-    //     // Instance the Journal Class to use what it contains
-    //     Journal journal = new Journal();
-        
-    //     // Instance the streamwriter class(?) in a "using" block so that things close once we're done.
-    //     using (StreamWriter outputFile = new StreamWriter(fileName))
-    //     {
-    //         foreach (string line in journal._entries)
-    //         {
-    //             outputFile.WriteLine(line);
-    //             outputFile.WriteLine("|");
-    //         }
-    //     }
-    // }
 }

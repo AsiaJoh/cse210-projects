@@ -18,7 +18,6 @@ public class Journal
 
         // Print said random prompt to the console
         Console.WriteLine(randomPrompt);
-        Console.Write("> ");
 
         // Return the prompt, so it can also be stored in the file (as that is a different location)
         return randomPrompt;
@@ -61,7 +60,7 @@ public class Journal
         string file = Console.ReadLine();
 
         // Read the lines from the file into a string array
-        string[] fileArray = System.IO.File.ReadAllLines(file); // Why is it not registering the system.io
+        string[] fileArray = System.IO.File.ReadAllLines(file);
 
         // Output the content
         foreach (string line in fileArray)
@@ -82,6 +81,6 @@ public class Journal
             loadedJournal.Add(entry); // Adding the entry class to the new list for future use(?)
         }
         
-        _entries = loadedJournal; //This is not working...
+        _entries = loadedJournal;
     }
 }
