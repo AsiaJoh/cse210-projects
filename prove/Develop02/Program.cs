@@ -14,7 +14,6 @@ class Program
 
         while (keepProgramOpen == 0)
         {
-            Console.WriteLine();
             Console.WriteLine("Welcome to the Journal Program!");
             Console.WriteLine("Please select one of the following choices (via number):");
             Console.WriteLine("1. Write");
@@ -24,8 +23,6 @@ class Program
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");
             string option = Console.ReadLine();
-
-            
 
             if (option == "1")
             {
@@ -60,6 +57,7 @@ class Program
             {
                 // Exit program
                 Console.WriteLine("Have a nice day!");
+                Console.WriteLine();
                 keepProgramOpen = 1;
             }
         }
