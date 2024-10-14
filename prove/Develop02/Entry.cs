@@ -13,10 +13,10 @@ public class Entry
 
     public void DisplayEntry()
         {
-            // Display the entries you've made in this session thus far
+            // Display the entries list in a nice manner
             
-            Console.WriteLine($"{_date}");
-            Console.WriteLine($"{_prompt}");
+            Console.WriteLine($"Date: {_date} - Prompt: {_prompt}");
             Console.WriteLine($"{_content}");
+            Console.WriteLine();
         }
 }

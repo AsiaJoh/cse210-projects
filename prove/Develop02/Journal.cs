@@ -29,7 +29,7 @@ public class Journal
     }
 
     public void DisplayJournal()
-    {
+    {   // Display whatever is in the entries list
         foreach (Entry entry in _entries)
         {
             entry.DisplayEntry();
@@ -61,7 +61,7 @@ public class Journal
         List<Entry> loadedJournal = new List<Entry>(); // Making a new instance of the entries list
         
         // Ask for file name
-        Console.Write("What is the filename? ");
+        Console.Write("What is the filename? (I sure hope you saved...) ");
         string file = Console.ReadLine();
 
         // Read the lines from the file into a string array

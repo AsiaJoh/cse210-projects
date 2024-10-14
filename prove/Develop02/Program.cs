@@ -14,6 +14,7 @@ class Program
 
         while (keepProgramOpen == 0)
         {
+            Console.WriteLine();
             Console.WriteLine("Welcome to the Journal Program!");
             Console.WriteLine("Please select one of the following choices (via number):");
             Console.WriteLine("1. Write");
