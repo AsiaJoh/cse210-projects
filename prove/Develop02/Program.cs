@@ -7,6 +7,11 @@ class Program
     {
         int keepProgramOpen = 0;
 
+        // Create an instance of the necessary classes
+        Entry entry = new Entry();
+        Journal journal = new Journal();
+
+
         while (keepProgramOpen == 0)
         {
             Console.WriteLine("Welcome to the Journal Program!");
@@ -25,30 +30,20 @@ class Program
             {
                 // Start the process of writing a new entry
 
-                // Create an instance of the necessary class
-                Entry entry = new Entry();
-
                 // Call the needed function
-                entry.SaveEntry();
+                entry.WriteEntry();
             }
             else if (option == "2")
             {
                 // Display the entries of the day thus far
-
-                // Create an instance of the necessary class
-                Entry entry = new Entry();
                 
                 // Call the needed function
-                entry.GetEntry();
+                entry.DisplayEntry();
             }
 
             else if (option == "3")
             {
                 // Ask for the name of the file to load, and then load it
-                
-                // Create an instance of the necessary class
-                Journal journal = new Journal();
-
                 // Ask for file name
                 Console.Write("What is the filename? ");
                 string file = Console.ReadLine();
@@ -61,12 +56,10 @@ class Program
             else if (option == "4")
             {
                 // Prompt user for file name, and save current entries to that file 
-
-                // Create an instance of the necessary class
-                Journal journal = new Journal();
-                
+                Console.Write("What is the filename? ");
+                string file = Console.ReadLine();
                 // Call the needed function
-                journal.SaveJournal();
+                entry.SaveEntry(file);
             }
             else
             {

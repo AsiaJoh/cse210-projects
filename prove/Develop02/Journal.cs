@@ -24,7 +24,6 @@ public class Journal
         return randomPrompt;
     }
 
-    // public static List<string> LoadJournal(string file)
     public void LoadJournal(string file)
     {
         // Goal: Display a previously saved text file
@@ -34,10 +33,10 @@ public class Journal
         string[] fileArray = System.IO.File.ReadAllLines(file); // Why is it not registering the system.io
 
         // Convert the string array to a list
-        List<string> fileContent = fileArray.ToList();
+        // List<string> fileContent = fileArray.ToList();
 
         // Print the content
-        foreach (string line in fileContent)
+        foreach (string line in file)
         {
             Console.WriteLine(line);
         }
@@ -47,7 +46,7 @@ public class Journal
 
     public void SaveJournal() // No need for this to have the filename parameter, it asks for a name within the function
     {
-        // Goal: Save the user's journal entries to a file
+        // Goal: Save the user's journal entries to a file (Currently this appears to just be creating a new empty file...)
 
         // Prompt for the file name
         Console.WriteLine("What will the name of your file be? ");

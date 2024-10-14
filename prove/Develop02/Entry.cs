@@ -12,46 +12,60 @@ public class Entry
 
     // Now for the Class's functions (or the methods)
 
-    public void GetEntry()
+    public void DisplayEntry()
         {
-            // Display the entries you've made in this session thus far (the list), OR retrieve a specific entry from the list? But that would require paramaters so probably not.
+            // Display the entries you've made in this session thus far (the list)
             
             // Make an instance of the Journal Class to use the entries list within it
             Journal journal = new Journal();
 
             // Print the entries list (edit fanciness later?)
-            foreach (string entry in journal._entries)
+            foreach (string segment in journal._entries)
             {
-                Console.WriteLine(entry);
+                Console.WriteLine(segment);
             }
         }
 
-    public void SaveEntry()
+
+    public void WriteEntry()
     {
-        // Goal: Start a new entry, and save the user's entry to the list of entries? (Perhaps the above function just tries to show the gathered entries, not add or save them?)
+        // Goal: Start a new entry, and save the user's entry to the list of entries
         // New Goal: Start a new entry, and save it to a file
 
         // Instance the Journal Class to use what it contains
         Journal journal = new Journal();
+
+        // Display the user's prompt to the console
+        string randomPrompt = journal.DisplayPrompt();
+        Console.Write("> ");
+  
+        // Retrieve the user's entry
+        _content = Console.ReadLine();
+
+        // Now store these things (and the date) into a list
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+
+        journal._entries.Add(dateText);
+        journal._entries.Add(randomPrompt);
+        journal._entries.Add(_content);
+    }
+
+    public void SaveEntry(string fileName)
+    {
+        // New Goal: Save the entry list to a file
+
+        // Instance the Journal Class to use what it contains
+        Journal journal = new Journal();
         
-        // Give a value/title to the variable holding the file we'll save to
-        _fileName = "myFile.txt";
-
         // Instance the streamwriter class(?) in a "using" block so that things close once we're done.
-        using (StreamWriter outputFile = new StreamWriter(_fileName))
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            // Paste in the date, for the file's sake
-            DateTime theCurrentTime = DateTime.Now;
-            string dateText = theCurrentTime.ToShortDateString();
-
-            // Call the repurposed prompt function
-            string randomPrompt = journal.DisplayPrompt();
-
-            // Put the prompt into the file
-            outputFile.WriteLine(randomPrompt);
-            
-            outputFile.Write("> ");
-            _content = Console.ReadLine(); // This goes to the console, but the rest goes to the file
+            foreach (string line in journal._entries)
+            {
+                outputFile.WriteLine(line);
+                outputFile.WriteLine("|");
+            }
         }
     }
 }
