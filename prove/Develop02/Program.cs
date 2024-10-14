@@ -38,28 +38,22 @@ class Program
                 // Display the entries of the day thus far
                 
                 // Call the needed function
-                entry.DisplayEntry();
+                journal.DisplayJournal();
             }
 
             else if (option == "3")
             {
                 // Ask for the name of the file to load, and then load it
-                // Ask for file name
-                Console.Write("What is the filename? ");
-                string file = Console.ReadLine();
                 
                 // Call the needed function
-                // string fileContent = journal.LoadJournal(file);
-                journal.LoadJournal(file);
+                journal.LoadJournal();
 
             }
             else if (option == "4")
             {
-                // Prompt user for file name, and save current entries to that file 
-                Console.Write("What is the filename? ");
-                string file = Console.ReadLine();
+                // Save current entries to a file 
                 // Call the needed function
-                entry.SaveEntry(file);
+                journal.SaveJournal();
             }
             else
             {
