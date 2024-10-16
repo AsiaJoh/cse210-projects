@@ -36,8 +36,8 @@ class Fraction
 
     // Now for the methods (specifically the getters and setters)
     // (Though for some reason, the key doesn't use any of the getters/setters. They did mention that they are useful sometimes, but many other times they are not, as they can undermine the point of making attributes private)
-    // However, this means I cannot double-check or validate my code...
-    void GetTop() // Methods are also automatically private (I think), so we must specify these to be public
+    // However, this means I cannot double-check or validate my code... (Also, are these things supposed to be private or public???)
+    void GetTop() // Methods are also automatically private (I think), so we must specify these to be public if we want them to be
     {
         int top = _top;
         Console.WriteLine($"Here is the top: {top}");
