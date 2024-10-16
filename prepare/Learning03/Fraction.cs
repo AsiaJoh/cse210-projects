@@ -39,18 +39,18 @@ class Fraction
         Console.WriteLine($"Here is the top: {top}");
     }
 
-    public void SetTop(int top)
+    void SetTop(int top)
     {
         _top = top;
     }
 
-    public void GetBottom()
+    void GetBottom()
     {
         int bottom = _bottom;
         Console.WriteLine($"Here is the bottom: {bottom}");
     }
 
-    public void SetBottom(int bottom)
+    void SetBottom(int bottom)
     {
         _bottom = bottom;
     }
