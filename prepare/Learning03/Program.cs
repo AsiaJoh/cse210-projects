@@ -18,6 +18,7 @@ class Program
         Console.WriteLine(fractionTwo.GetDecimalValue());
 
         Fraction fractionThree = new Fraction(5, 6); // Object 4 instance, using 4th constructor
-
+        Console.WriteLine(fractionThree.GetFractionString());
+        Console.WriteLine(fractionThree.GetDecimalValue());
     }
 }
