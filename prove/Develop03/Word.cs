@@ -23,13 +23,12 @@ public class Word
         {
             if (char.IsLetter(character)) // If the character being examined is a letter...
             { // Add an _ to the result variable
-                result += "_ "; // May adjust later to deal with printing a space before the period
+                result += "_";
             }
             else // Otherwise
             {
                 result += character; // Add the character you're reading (probably some form of punctuation) to the result variable
             }
-
         }
         // Assign the result to the word, now making this word "redacted"
         _word = result; 

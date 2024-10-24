@@ -33,8 +33,8 @@ public class Scripture
         
         // Instance random class
         Random random = new Random();
-        // Get a random number between 1 and 3 (including these)
-        int randomCounter = random.Next(0, 4);
+        // Get a random number between 1 and 4 (including these)
+        int randomCounter = random.Next(0, 5);
         
         // Assign the original number-of-redacted-words for later use
         int totalWordsRedacted = randomCounter;
@@ -53,15 +53,16 @@ public class Scripture
             {
                 // Call the redact word method
                 _wordList[randomNumber].RedactWord();
-            }
-            else // If the redacted status is true
-            { 
-                RedactScripture();
-            }
 
-            // Subtract 1 from the counter, so that it counts down from whatever random number it chose
-            // If it chose 3, it goes down to 2 and runs 2 more times, if it chose 1 it ends, etc.
-            randomCounter -= 1;
+                // Subtract 1 from the randomCounter, so that it counts down from whatever random number it chose
+                // If it chose 3, it goes down to 2 and runs 2 more times, if it chose 1 it goes down to 0 and ends, etc.
+                randomCounter -= 1;
+            }
+            // else // If the redacted status is true
+            // { // Call the function again so we at least redact once. However! This is a problem now with the multiple-redacting-words, and could result in tons of 
+            // // words being redacted all at once.
+            //     RedactScripture();
+            // }
         }
 
         return totalWordsRedacted;
