@@ -8,7 +8,7 @@ public class Word
     // Constructor
     public Word(string word)
     {
-
+        _word = word;
     }
 
     // Methods

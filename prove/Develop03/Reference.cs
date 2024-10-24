@@ -13,12 +13,21 @@ public class Reference
     {
         // If you use this constructor, set _multiVersesUsed to true
         _multiVersesUsed = true;
+
+        _book = book;
+        _chapter = chapter;
+        _verseStart = start;
+        _verseEnd = end;
     }
 
     public Reference(string book, int chapter, int start)
     {
         // If you use this constructor, set _multiVersesUsed to false
         _multiVersesUsed = false;
+
+        _book = book;
+        _chapter = chapter;
+        _verseStart = start;
     }
 
     // Actual Methods
@@ -32,5 +41,5 @@ public class Reference
         {
             Console.Write($"{_book} {_chapter}:{_verseStart}");
         }
-    } 
+    }
 }
