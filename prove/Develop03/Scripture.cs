@@ -28,7 +28,7 @@ public class Scripture
         }
     }
 
-    public void RedactScripture()
+    public int RedactScripture()
     { // Choose a random Word, check if it is redacted, then redact said word if not. (And choose a random amount of words to redact)
         
         // Instance random class
@@ -36,6 +36,9 @@ public class Scripture
         // Get a random number between 1 and 3 (including these)
         int randomCounter = random.Next(0, 4);
         
+        // Assign the original number-of-redacted-words for later use
+        int totalWordsRedacted = randomCounter;
+
         while (randomCounter > 0)
         {
             // Choosing a random word...
@@ -60,5 +63,7 @@ public class Scripture
             // If it chose 3, it goes down to 2 and runs 2 more times, if it chose 1 it ends, etc.
             randomCounter -= 1;
         }
+
+        return totalWordsRedacted;
     }
 }
