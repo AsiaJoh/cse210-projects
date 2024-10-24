@@ -26,11 +26,11 @@ public class Reference
     {
         if (_multiVersesUsed) // If there were multiple verses used, include the - in the print statement, between the verses
         {
-            Console.WriteLine($"{_book} {_chapter}:{_verseStart}-{_verseEnd}");
+            Console.Write($"{_book} {_chapter}:{_verseStart}-{_verseEnd}");
         }
         else // Otherwise, don't print the - or the end-verse (because there is none)
         {
-            Console.WriteLine($"{_book} {_chapter}:{_verseStart}");
+            Console.Write($"{_book} {_chapter}:{_verseStart}");
         }
     }
 }

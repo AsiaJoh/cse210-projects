@@ -19,7 +19,7 @@ public class Scripture
         
         // Display the reference
         _reference.DisplayReference();
-        Console.WriteLine();
+        // Console.WriteLine();
 
         // Display the scripture via printing out the funky list...
         foreach (Word word in _wordList)
@@ -29,26 +29,36 @@ public class Scripture
     }
 
     public void RedactScripture()
-    { // Choose a random Word, check if it is redacted, then redact said word if not
-        // Choosing a random word...
+    { // Choose a random Word, check if it is redacted, then redact said word if not. (And choose a random amount of words to redact)
+        
         // Instance random class
         Random random = new Random();
-
-        // Find the length of the word list that is the scripture (index-wise)
-        int listLength = _wordList.Count;
-
-        // Generate a random integer within that list (according to it's indexes)
-        int randomNumber = random.Next(0, listLength); // The first number is inclusive, the second exclusive, so the highest number shoulD be the max index
-
-        // Check if the related word is redacted
-        if (!_wordList[randomNumber].GetRedacted()) // Check if redacted status is false
+        // Get a random number between 1 and 3 (including these)
+        int randomCounter = random.Next(0, 4);
+        
+        while (randomCounter > 0)
         {
-            // Call the redact word method
-            _wordList[randomNumber].RedactWord();
-        }
-        else // If the redacted status is true
-        { 
-            RedactScripture();
+            // Choosing a random word...
+            // Find the length of the word list that is the scripture (index-wise)
+            int listLength = _wordList.Count;
+
+            // Generate a random integer within that list (according to it's indexes)
+            int randomNumber = random.Next(0, listLength); // The first number is inclusive, the second exclusive, so the highest number shoulD be the max index
+
+            // Check if the related word is redacted
+            if (!_wordList[randomNumber].GetRedacted()) // Check if redacted status is false
+            {
+                // Call the redact word method
+                _wordList[randomNumber].RedactWord();
+            }
+            else // If the redacted status is true
+            { 
+                RedactScripture();
+            }
+
+            // Subtract 1 from the counter, so that it counts down from whatever random number it chose
+            // If it chose 3, it goes down to 2 and runs 2 more times, if it chose 1 it ends, etc.
+            randomCounter -= 1;
         }
     }
 }
