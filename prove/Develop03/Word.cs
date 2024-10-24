@@ -16,6 +16,12 @@ public class Word
     {
         return _isRedacted;
     }
+
+    public string GetWord()
+    {
+        return _word;
+    }
+
     public void RedactWord()
     { // Transform regular word into its redacted form (a series of underscores)
         string result = "";

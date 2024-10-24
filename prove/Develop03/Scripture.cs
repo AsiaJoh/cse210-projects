@@ -22,9 +22,9 @@ public class Scripture
         // Console.WriteLine();
 
         // Display the scripture via printing out the funky list...
-        foreach (Word word in _wordList)
+        foreach (Word wordObject in _wordList)
         {
-            Console.Write(word );
+            Console.Write($"{wordObject.GetWord}");
         }
     }
 
