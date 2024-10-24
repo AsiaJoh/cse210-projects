@@ -11,15 +11,28 @@ public class Word
 
     }
 
-    // Method
+    // Methods
+
+    public bool GetRedacted()
+    {
+        return _isRedacted;
+    }
     public void RedactWord()
-    { // Transform regular word into it's redacted form (a series of underscores)
+    { // Transform regular word into its redacted form (a series of underscores)
         string result = "";
-        foreach (var letter in _word)
+        foreach (char character in _word)
         {
-            result += "_ ";
+            if (char.IsLetter(character))
+            {
+                result += "_ ";
+            }
+            else
+            {
+                result += character;
+            }
 
         }
         _word = result;
+        _isRedacted = true;
     }
 }
