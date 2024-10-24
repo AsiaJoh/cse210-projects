@@ -32,5 +32,5 @@ public class Reference
         {
             Console.Write($"{_book} {_chapter}:{_verseStart}");
         }
-    }
+    } 
 }
