@@ -17,9 +17,11 @@ public class Scripture
         // Construct the reference class, then put the scripture reference in there
         _reference = new Reference("Moses", 1, 39);
         
+        // Display the reference
         _reference.DisplayReference();
         Console.WriteLine();
-        
+
+        // Display the scripture via printing out the funky list...
     }
 
     public void RedactScripture()
