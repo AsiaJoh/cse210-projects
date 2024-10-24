@@ -15,9 +15,9 @@ public class Scripture
         };
 
         // Construct the reference class, then put the scripture reference in there
-        new Reference("Moses", 1, 39);
+        _reference = new Reference("Moses", 1, 39);
         
-        Reference.DisplayReference();
+        _reference.DisplayReference();
     }
 
     public void RedactScripture()
