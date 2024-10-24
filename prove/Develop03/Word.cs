@@ -12,7 +12,6 @@ public class Word
     }
 
     // Methods
-
     public bool GetRedacted()
     {
         return _isRedacted;
@@ -22,17 +21,19 @@ public class Word
         string result = "";
         foreach (char character in _word)
         {
-            if (char.IsLetter(character))
-            {
-                result += "_ ";
+            if (char.IsLetter(character)) // If the character being examined is a letter...
+            { // Add an _ to the result variable
+                result += "_ "; // May adjust later to deal with printing a space before the period
             }
-            else
+            else // Otherwise
             {
-                result += character;
+                result += character; // Add the character you're reading (probably some form of punctuation) to the result variable
             }
 
         }
-        _word = result;
+        // Assign the result to the word, now making this word "redacted"
+        _word = result; 
+        // Change the label to "redacted" so the program can detect that, and not re-redact it in the future
         _isRedacted = true;
     }
 }

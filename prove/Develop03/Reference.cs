@@ -11,22 +11,24 @@ public class Reference
     // Constructorssss
     public Reference(string book, int chapter, int start, int end)
     {
+        // If you use this constructor, set _multiVersesUsed to true
         _multiVersesUsed = true;
     }
 
     public Reference(string book, int chapter, int start)
     {
+        // If you use this constructor, set _multiVersesUsed to false
         _multiVersesUsed = false;
     }
 
     // Actual Methods
     public void DisplayReference()
     {
-        if (_multiVersesUsed)
+        if (_multiVersesUsed) // If there were multiple verses used, include the - in the print statement, between the verses
         {
             Console.WriteLine($"{_book} {_chapter}:{_verseStart}-{_verseEnd}");
         }
-        else
+        else // Otherwise, don't print the - or the end-verse (because there is none)
         {
             Console.WriteLine($"{_book} {_chapter}:{_verseStart}");
         }
