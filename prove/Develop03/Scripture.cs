@@ -18,6 +18,8 @@ public class Scripture
         _reference = new Reference("Moses", 1, 39);
         
         _reference.DisplayReference();
+        Console.WriteLine();
+        
     }
 
     public void RedactScripture()
