@@ -2,8 +2,6 @@ using System;
 // For exceeding requirements, I caused the program to only redact words that haven't been redacted yet, and I set it up to not redact punctuation characters, 
 // in the hopes that if the user wanted to count the underscores for a hint, the punctuation wouldn't mislead them.
 
-
-
 class Program
 {
     static void Main(string[] args)
