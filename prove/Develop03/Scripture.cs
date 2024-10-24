@@ -24,7 +24,7 @@ public class Scripture
         // Display the scripture via printing out the funky list...
         foreach (Word wordObject in _wordList)
         {
-            Console.Write($"{wordObject.GetWord}");
+            Console.Write($"{wordObject.GetWord} ");
         }
     }
 
