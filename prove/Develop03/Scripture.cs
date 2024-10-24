@@ -7,12 +7,17 @@ public class Scripture
 
     public void DisplayScripture()
     {
-        _wordsList = [new Word("Behold,"), new Word("this"), new Word("is"), new Word("my"), new Word("work"), new Word("and"), new Word("my"), new Word("glory--"), 
+        _wordsList = new List<Word>
+        {
+            new Word("Behold,"), new Word("this"), new Word("is"), new Word("my"), new Word("work"), new Word("and"), new Word("my"), new Word("glory--"), 
         new Word("to"), new Word("bring"), new Word("to"), new Word("pass"), new Word("the"), new Word("immortality"), new Word("and"), new Word("eternal"), 
-        new Word("live"), new Word("of"), new Word("man.")];
+        new Word("live"), new Word("of"), new Word("man.")
+        };
 
         // Construct the reference class, then put the scripture reference in there
-        _reference = "Moses 1:39";
+        new Reference("Moses", 1, 39);
+        
+        Reference.DisplayReference();
     }
 
     public void RedactScripture()
@@ -22,7 +27,7 @@ public class Scripture
         Random random = new Random();
 
         // Find the length of the word list that is the scripture (index-wise)
-        int listLength = _wordsList.Count();
+        int listLength = _wordsList.Count;
 
         // Generate a random integer within that list (according to it's indexes)
         int randomNumber = random.Next(0, listLength); // The first number is inclusive, the second exclusive, so the highest number shoulD be the max index

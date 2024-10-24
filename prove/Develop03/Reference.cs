@@ -21,6 +21,6 @@ public class Reference
     // Actual Methods
     public void DisplayReference()
     {
-        
+        Console
     }
 }
