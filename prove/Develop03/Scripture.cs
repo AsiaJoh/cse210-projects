@@ -25,38 +25,33 @@ public class Scripture
         }
     }
 
-    public int RedactScripture()
+    public void RedactScripture()
     { // Choose a random Word, check if it is redacted, then redact said word if not. (And choose a random amount of words to redact)
         
         // Instance random class
         Random random = new Random();
-        // Get a random number between 1 and 4 (including these)
-        int randomCounter = random.Next(1, 5);
-        
-        // Assign the original number-of-redacted-words for later use
-        int totalWordsRedacted = randomCounter;
 
-        while (randomCounter > 0)
+        // Choosing a random word...
+        // Find the length of the word list that is the scripture (index-wise)
+        int listLength = _wordList.Count;
+
+        // Generate a random integer within that list (according to it's indexes)
+        int randomNumber = random.Next(0, listLength); // The first number is inclusive, the second exclusive, so the highest number shoulD be the max index
+
+        // Assign the chosen word to a variable
+        Word word = _wordList[randomNumber];
+
+        // While the chosen word has already been redacted
+        while (word.GetRedacted())
         {
-            // Choosing a random word...
-            // Find the length of the word list that is the scripture (index-wise)
-            int listLength = _wordList.Count;
+            // Pick a new random number
+            randomNumber = random.Next(0, listLength);
 
-            // Generate a random integer within that list (according to it's indexes)
-            int randomNumber = random.Next(0, listLength); // The first number is inclusive, the second exclusive, so the highest number shoulD be the max index
-
-            // Check if the related word is redacted
-            if (!_wordList[randomNumber].GetRedacted()) // Check if redacted status is false
-            {
-                // Call the redact word method
-                _wordList[randomNumber].RedactWord();
-
-                // Subtract 1 from the randomCounter, so that it counts down from whatever random number it chose
-                // If it chose 3, it goes down to 2 and runs 2 more times, if it chose 1 it goes down to 0 and ends, etc.
-                randomCounter -= 1;
-            }
+            // Pick a new word
+            word = _wordList[randomNumber];
         }
 
-        return totalWordsRedacted;
+        // Call the redact word method
+        word.RedactWord();
     }
 }

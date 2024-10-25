@@ -12,13 +12,14 @@ class Program
         // Instance the scripture class
         Scripture scripture = new Scripture();
 
-        do // Using a do-while loop in this scenario to hopefully get the code to still fully print out a fully-redacted scripture verse at least once, before ending automatically
-        {
+        while (totalWordsRedacted < 19) // 19 is the total number of words in the scripture
+        {   
             // Display the scripture
             scripture.DisplayScripture();
             
             Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
+
             string userInput = Console.ReadLine();
 
             if (userInput.ToLower() != "quit")
@@ -28,11 +29,23 @@ class Program
                 // Clear the console
                 Console.Clear();
 
+                // Generate a random number, to redact a random number of words (1-4)
+
+                // Instance random class
+                Random random = new Random();
+
+                // Get a random number between 1 and 4 (including these)
+                int randomCounter = random.Next(1, 5);
+
+                while (randomCounter > 0 && totalWordsRedacted < 19)
+                {
                 // Call the RedactScripture function to erase a random number of words in random spots
                 // Add the number returned in the RedactScripture to a different variable, as this will count how many of the total words have been redacted.
-                int wordsRedacted = scripture.RedactScripture();
+                scripture.RedactScripture();
 
-                totalWordsRedacted += wordsRedacted;
+                randomCounter -= 1;
+                totalWordsRedacted += 1;
+                }
             }
             else
             { // If the user typed quit
@@ -44,11 +57,14 @@ class Program
             }
             if (totalWordsRedacted > 19)
             {
-                totalWordsRedacted = 19;
+            totalWordsRedacted = 19;
             }
         }
-        while (totalWordsRedacted != 19); // 19 is the total number of words in the scripture
-
-        scripture.RedactScripture();
+        // Display the scripture
+        scripture.DisplayScripture();
+        
+        Console.WriteLine();
+        Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
+        Console.ReadLine();
     }
 }
