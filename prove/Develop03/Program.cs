@@ -42,10 +42,13 @@ class Program
                 
                 totalWordsRedacted = 19;
             }
+            if (totalWordsRedacted > 19)
+            {
+                totalWordsRedacted = 19;
+            }
         }
         while (totalWordsRedacted != 19); // 19 is the total number of words in the scripture
 
-        // If no input but not scripture fully redacted (get fully redacted ) rldr rnf
-        // If times redacted = word count, set scripture fully redacted boolean to true
+        scripture.RedactScripture();
     }
 }

@@ -3,28 +3,25 @@ using System;
 public class Scripture
 {   // The private piece is unnecessary, but for the sake of remembering syntax/format I'm going to write it this time
     private Reference _reference; 
-    private List<Word> _wordList;
-
-    public void DisplayScripture()
-    {
-        _wordList = new List<Word>
+    private List<Word> _wordList = new List<Word>
         {
-            new Word("Behold,"), new Word("this"), new Word("is"), new Word("my"), new Word("work"), new Word("and"), new Word("my"), new Word("glory--"), 
+        new Word("Behold,"), new Word("this"), new Word("is"), new Word("my"), new Word("work"), new Word("and"), new Word("my"), new Word("glory--"), 
         new Word("to"), new Word("bring"), new Word("to"), new Word("pass"), new Word("the"), new Word("immortality"), new Word("and"), new Word("eternal"), 
         new Word("live"), new Word("of"), new Word("man.")
         };
 
+    public void DisplayScripture()
+    {
         // Construct the reference class, then put the scripture reference in there
         _reference = new Reference("Moses", 1, 39);
         
         // Display the reference
         _reference.DisplayReference();
-        // Console.WriteLine();
 
         // Display the scripture via printing out the funky list...
         foreach (Word wordObject in _wordList)
         {
-            Console.Write($"{wordObject.GetWord} ");
+            Console.Write($"{wordObject.GetWord()} ");
         }
     }
 
@@ -34,7 +31,7 @@ public class Scripture
         // Instance random class
         Random random = new Random();
         // Get a random number between 1 and 4 (including these)
-        int randomCounter = random.Next(0, 5);
+        int randomCounter = random.Next(1, 5);
         
         // Assign the original number-of-redacted-words for later use
         int totalWordsRedacted = randomCounter;
@@ -58,11 +55,6 @@ public class Scripture
                 // If it chose 3, it goes down to 2 and runs 2 more times, if it chose 1 it goes down to 0 and ends, etc.
                 randomCounter -= 1;
             }
-            // else // If the redacted status is true
-            // { // Call the function again so we at least redact once. However! This is a problem now with the multiple-redacting-words, and could result in tons of 
-            // // words being redacted all at once.
-            //     RedactScripture();
-            // }
         }
 
         return totalWordsRedacted;

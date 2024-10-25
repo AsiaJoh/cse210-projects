@@ -30,6 +30,7 @@ public class Word
             if (char.IsLetter(character)) // If the character being examined is a letter...
             { // Add an _ to the result variable
                 result += "_";
+
             }
             else // Otherwise
             {
