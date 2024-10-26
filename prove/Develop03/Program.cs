@@ -9,6 +9,9 @@ class Program
         // bool scriptureFullyRedacted = false;
         int totalWordsRedacted = 0;
 
+        // Declare boolean for future use in determining how the program was exited
+        bool exitedViaQuit = false;
+
         // Instance the scripture class
         Scripture scripture = new Scripture();
 
@@ -51,7 +54,7 @@ class Program
             { // If the user typed quit
                 // // Leave a nice message and end the program
                 Console.WriteLine("Have a happy day, and good luck memorizing!");
-                // scriptureFullyRedacted = true;
+                exitedViaQuit = true;
                 
                 totalWordsRedacted = 19;
             }
@@ -60,11 +63,15 @@ class Program
             totalWordsRedacted = 19;
             }
         }
-        // Display the scripture
-        scripture.DisplayScripture();
+
+        if (!exitedViaQuit)
+        { // If you did not exit via the quit function (aka pressed enter when nearly all the words were redacted)
+            // Display the scripture one last time
+            scripture.DisplayScripture();
         
-        Console.WriteLine();
-        Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
-        Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
+            Console.ReadLine();
+        }
     }
 }
