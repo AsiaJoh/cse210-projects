@@ -19,12 +19,21 @@ class Program
         //Test 2
         MathAssignment mathAssignmentDefault = new MathAssignment();
         string hwList = mathAssignmentDefault.GetHomeworkList();
-        // Console.WriteLine(summary);
+        summary = mathAssignmentDefault.GetSummary();
+        Console.WriteLine(summary);
         Console.WriteLine(hwList);
 
-        MathAssignment mathAssignmentParams = new MathAssignment("Larry", "meth", "6", "5-7");
+        Console.WriteLine("---");
+
+        MathAssignment mathAssignmentParams = new MathAssignment("E", "yiddles", "6", "5-7");
         hwList = mathAssignmentParams.GetHomeworkList();
-        // Console.WriteLine(summary);
+        summary = mathAssignmentParams.GetSummary();
+        Console.WriteLine(summary);
         Console.WriteLine(hwList);
+
+        Console.WriteLine();
+
+        //Test 3
+        
     }
 }
