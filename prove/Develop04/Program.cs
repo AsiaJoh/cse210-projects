@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        // Testing beginning/ending messages
+        Activity activity = new Activity("Larry");
+
+        activity.BeginningMessage();
+        activity.EndingMessage();
     }
 }
