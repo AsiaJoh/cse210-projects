@@ -47,6 +47,8 @@ class Activity
         string message = $"Well done!! \n\nYou have completed {_duration} seconds of the {_name}.";
         Console.WriteLine(message);
         
+        // Loop this until a mini timer reaches zero
+        
         // Little animation
         Console.Write("+");
         Thread.Sleep(500);
