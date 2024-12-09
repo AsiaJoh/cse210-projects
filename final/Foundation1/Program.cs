@@ -36,6 +36,7 @@ class Program
         lizardVideo.AppendComment(lizardComment2);
         lizardVideo.AppendComment(lizardComment3);
         
+
         // Video 2
         Video epicFailsVideo = new Video();
         epicFailsVideo.SetAuthor("Skateboard Enthusiast");
@@ -43,15 +44,36 @@ class Program
         epicFailsVideo.SetTitle("Absolute Epic Fails Montage");
 
         // Video 2's comments
+        Comment epicComment1 = new Comment();
+        epicComment1.SetName("hooligan");
+        epicComment1.SetText("Oh no!!!");
+
+        Comment epicComment2 = new Comment();
+        epicComment2.SetName("Skateboarder2000");
+        epicComment2.SetText("Lol");
+
+        Comment epicComment3 = new Comment();
+        epicComment3.SetName("E");
+        epicComment3.SetText("Imagine throwing yourself at the floor and missing.");
+
+        Comment epicComment4 = new Comment();
+        epicComment4.SetName("Professor Higgens");
+        epicComment4.SetText("Spoonfull of sugar helps the medicine go down");
 
         // Append Video 2 to Video list
-
+        videoList.Add(epicFailsVideo);
         // Append comments to Video 2's Comment list
-
-
+        epicFailsVideo.AppendComment(epicComment1);
+        epicFailsVideo.AppendComment(epicComment2);
+        epicFailsVideo.AppendComment(epicComment3);
+        epicFailsVideo.AppendComment(epicComment4);
 
 
         // Video 3
+        Video hampter = new Video();
+        epicFailsVideo.SetAuthor("pneumonoultramicroscopicsilicovolcanoconiosis");
+        epicFailsVideo.SetLength(1);
+        epicFailsVideo.SetTitle("hampter");
 
         // Video 3's comments
 
