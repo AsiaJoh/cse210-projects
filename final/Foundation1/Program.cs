@@ -99,6 +99,7 @@ class Program
         // Then, have your program iterate through the list of videos 
         foreach (Video video in videoList) { 
             // and for each one, display the title, author, length, number of comments (from the method) 
+            Console.WriteLine("----------");
             video.DisplayVideo();
 
             // and then list out all of the comments for that video. 
