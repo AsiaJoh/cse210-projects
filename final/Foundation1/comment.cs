@@ -12,6 +12,13 @@ class Comment
     }
 
     // Method(s)
+    public void DisplayComment() {
+        // Display name and text in a comment-like fashion  
+        string comment = $"@{_name} \n{_text}\n";
+        Console.WriteLine(comment);
+    }
+
+
     // Getters/Setters
     public string GetName() {
         return _name;

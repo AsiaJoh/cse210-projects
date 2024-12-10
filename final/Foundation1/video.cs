@@ -26,13 +26,15 @@ class Video
     public void DisplayVideo() {
         // Display the title, author, length, number of comments (from the method) 
         int numComments = CommentsCount(); 
-        string videoData = $"Video Title: {_title}. \nVideo Author: {_author}. \nVideo Length: {_length} minutes. \nVideo Comment Count: {numComments}.";
+        string videoData = $"Video Title: {_title} \nVideo Author: {_author} \nVideo Length: {_length} minute(s) \nVideo Comment Count: {numComments}\n";
         Console.WriteLine(videoData);
     }
 
     public void DisplayCommentsList() {
         // List out all of the comments for that video.
-        Console.WriteLine(_comments);
+        foreach (Comment comment in _comments) { 
+            comment.DisplayComment();
+        }
     }
 
     public void AppendComment(Comment comment) {
