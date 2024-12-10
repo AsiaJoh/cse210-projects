@@ -53,9 +53,6 @@ class Video
     public int GetLength() {
         return _length;
     }
-    public List<Comment> GetCommentsList() {
-        return _comments;
-    }
 
     public void SetTitle(string title) {
         _title = title;
@@ -65,8 +62,5 @@ class Video
     }
     public void SetLength(int length) {
         _length = length;
-    }
-    public void SetCommentsList(List<Comment> commentList) {
-        _comments = commentList;
     }
 }
