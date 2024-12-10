@@ -70,53 +70,39 @@ class Program
 
 
         // Video 3
-        Video hampter = new Video();
-        epicFailsVideo.SetAuthor("pneumonoultramicroscopicsilicovolcanoconiosis");
-        epicFailsVideo.SetLength(1);
-        epicFailsVideo.SetTitle("hampter");
+        Video hampterVideo = new Video();
+        hampterVideo.SetAuthor("pneumonoultramicroscopicsilicovolcanoconiosis");
+        hampterVideo.SetLength(1);
+        hampterVideo.SetTitle("hampter");
 
         // Video 3's comments
+        Comment hampterComment1 = new Comment();
+        hampterComment1.SetName("Asdf");
+        hampterComment1.SetText("he spin");
+
+        Comment hampterComment2 = new Comment();
+        hampterComment2.SetName("Eo");
+        hampterComment2.SetText("Look at him go");
+
+        Comment hampterComment3 = new Comment();
+        hampterComment3.SetName("Nonsensicalll");
+        hampterComment3.SetText("Majestic");
 
         // Append Video 3 to Video list
-
+        videoList.Add(hampterVideo);
         // Append comments to Video 3's Comment list
+        hampterVideo.AppendComment(hampterComment1);
+        hampterVideo.AppendComment(hampterComment2);
+        hampterVideo.AppendComment(hampterComment3);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
         // Then, have your program iterate through the list of videos 
-        // and for each one, display the title, author, length, number of comments (from the method) 
-        // and then list out all of the comments for that video. 
-        // Repeat this display for each video in the list.
+        foreach (Video video in videoList) { 
+            // and for each one, display the title, author, length, number of comments (from the method) 
+            video.DisplayVideo();
+
+            // and then list out all of the comments for that video. 
+            video.DisplayCommentsList();
+        }
     }
 }
