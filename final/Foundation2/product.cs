@@ -13,7 +13,12 @@ class Product
     }
 
     // Method(s)
+    public float computeTotalCost() {
+        // Total cost of this product is computed by multiplying the price per unit and the quantity.
+        float totalCost = _pricePerUnit * _quantity;
 
+        return totalCost;
+    }
 
     // Getters/Setters
     public string GetName() {
