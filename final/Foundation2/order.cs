@@ -15,9 +15,24 @@ class Order
     public float TotalCost(float pricePerUnit, int quantity) {
         // Calculate the total cost of the order
         // The total price is calculated as the sum of the total cost of each product plus a one-time shipping cost.
-        // If the customer lives in the USA, then the shipping cost is $5. If the customer does not live in the USA, then the shipping cost is $35.
 
-        float totalCost = pricePerUnit * quantity;
+        float baseCost = pricePerUnit * quantity;
+
+        float shippingCost;
+
+        // Assign the customer's address
+        Address address = _customer.GetAddress();
+
+        // If the customer lives in the USA, then the shipping cost is $5. If the customer does not live in the USA, then the shipping cost is $35.
+        if (_customer.USALiving(address)) {
+            shippingCost = 5;
+        }
+        else {
+            shippingCost = 35;
+        }
+
+        // Find and return total cost
+        float totalCost = baseCost + shippingCost;
         return totalCost;
     }
 
