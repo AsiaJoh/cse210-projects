@@ -38,7 +38,14 @@ class Order
 
     public string PackingLabel() {
         // A packing label should list the name and product id of each product in the order.
-        string packingLabel = "Hello yes I am a packing label";
+
+        // Initialize packing label
+        string packingLabel = $"Product Name(s):\n";
+
+        foreach (Product product in _productList) {
+            string productName = product.GetProductName();
+            packingLabel += $"{productName}\n";
+        }
 
         // Return a string for the packing label
         return packingLabel;
@@ -62,7 +69,14 @@ class Order
     public Customer GetCustomer() {
         return _customer;
     }
+    public void SetCustomer(Customer customer) {
+        _customer = customer;
+    }
+
     public List<Product> GetProductList() {
         return _productList;
+    }
+    public void SetProductList(List<Product> productList) {
+        _productList = productList;
     }
 }

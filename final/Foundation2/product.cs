@@ -21,7 +21,7 @@ class Product
     }
 
     // Getters/Setters
-    public string GetName() {
+    public string GetProductName() {
         return _productName;
     }
     public int GetProductID() {
@@ -35,7 +35,7 @@ class Product
     }
 
 
-    public void SetName(string productName) {
+    public void SetProductName(string productName) {
         _productName = productName;
     }
     public void SetProductID(int productID) {
