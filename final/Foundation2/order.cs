@@ -8,6 +8,7 @@ class Order
     public Order()
     {
         // Assigning the default values
+        _customer = new Customer();
 
     }
 

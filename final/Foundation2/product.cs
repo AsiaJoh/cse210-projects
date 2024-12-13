@@ -9,7 +9,10 @@ class Product
     public Product()
     {
         // Assigning the default values
-
+        _productName = "Product name";
+        _productID = 123456789;
+        _pricePerUnit = 0;
+        _quantity = 0;
     }
 
     // Method(s)

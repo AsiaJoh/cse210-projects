@@ -8,7 +8,7 @@ class Customer
     {
         // Assigning the default values
         _customerName = "Larry the Cucumber";
-
+        _address = new Address();
     }
 
     // Method(s)
