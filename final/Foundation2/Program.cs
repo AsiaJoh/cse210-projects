@@ -83,10 +83,10 @@ class Program
         // Add this product to the customer's list
         order2.addProductToList(hairbrush);
 
-        // Make second order's second product
+        // Make second order's third product
         Product glowsticks = new Product();
 
-        glowsticks.SetProductName("20 12in Glowsticks");
+        glowsticks.SetProductName("Bag of 12in Glowsticks");
         glowsticks.SetProductID(789123456);
         glowsticks.SetPricePerUnit(5f);
         glowsticks.SetQuantity(4);
@@ -108,12 +108,11 @@ class Program
         float order1TotalPrice = order1.TotalPrice();
 
         // First order display
-        Console.WriteLine("-----");
-        Console.WriteLine($"Thank you for shopping! Here is your order:");
-        string order1Display = $"Packing Label: \n{order1PackingLabel} \nShipping Label: \n{order1ShippingLabel} \nTotal Price: {order1TotalPrice}";
+        Console.WriteLine("----------");
+        Console.WriteLine($"Thank you for shopping, {customer1.GetCustomerName()}! Here is your order:");
+        string order1Display = $"Packing Label: \n{order1PackingLabel} \nShipping Label: \n{order1ShippingLabel} \nTotal Price: ${order1TotalPrice:F2}";
         Console.WriteLine(order1Display);
 
-        Console.WriteLine();
         Console.WriteLine();
         Console.WriteLine();
 
@@ -129,9 +128,9 @@ class Program
         float order2TotalPrice = order2.TotalPrice();
 
         // Second order display
-        Console.WriteLine("-----");
-        Console.WriteLine($"Thank you for shopping! Here is your order:");
-        string order2Display = $"Packing Label: \n{order2PackingLabel} \nShipping Label: \n{order2ShippingLabel} \nTotal Price: {order2TotalPrice}";
+        Console.WriteLine("----------");
+        Console.WriteLine($"Thank you for shopping, {customer2.GetCustomerName()}! Here is your order:");
+        string order2Display = $"Packing Label: \n{order2PackingLabel} \nShipping Label: \n{order2ShippingLabel} \nTotal Price: ${order2TotalPrice:F2}";
         Console.WriteLine(order2Display);
     }
 }

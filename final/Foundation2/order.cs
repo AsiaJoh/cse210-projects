@@ -45,11 +45,12 @@ class Order
         // A packing label should list the name and product id of each product in the order.
 
         // Initialize packing label
-        string packingLabel = $"\tProduct Name(s):\n\t";
+        string packingLabel = $"\tProduct Name(s) & ID(s)";
 
         foreach (Product product in _productList) {
             string productName = product.GetProductName();
-            packingLabel += $"{productName}\n\t";
+            int productID = product.GetProductID();
+            packingLabel += $"\n\tName: {productName} \n\tID: {productID}\n";
         }
 
         // Return a string for the packing label
