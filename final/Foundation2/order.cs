@@ -9,17 +9,21 @@ class Order
     {
         // Assigning the default values
         _customer = new Customer();
-
     }
 
     // Methods
-    public float TotalCost(float pricePerUnit, int quantity) {
+    public float TotalPrice() {
         // Calculate the total cost of the order
         // The total price is calculated as the sum of the total cost of each product plus a one-time shipping cost.
 
-        float baseCost = pricePerUnit * quantity;
+        float baseCostSum = 0;
 
-        float shippingCost;
+        foreach (Product product in _productList) {
+            float baseCost = product.computeTotalProductCost();
+            baseCostSum += baseCost;
+        }
+
+        float shippingCost = 0;
 
         // Assign the customer's address
         Address address = _customer.GetAddress();
@@ -33,7 +37,7 @@ class Order
         }
 
         // Find and return total cost
-        float totalCost = baseCost + shippingCost;
+        float totalCost = baseCostSum + shippingCost;
         return totalCost;
     }
 
@@ -63,6 +67,11 @@ class Order
 
         // Return a string for the shipping label
         return shippingLabel;
+    }
+
+    public void addProductToList(Product product) {
+        // Take a product and add it to the customer's list
+        _productList.Add(product);
     }
 
 

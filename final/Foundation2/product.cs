@@ -11,12 +11,12 @@ class Product
         // Assigning the default values
         _productName = "Product name";
         _productID = 123456789;
-        _pricePerUnit = 0;
-        _quantity = 0;
+        _pricePerUnit = 1.0f; // the f indicates this to be a float to the computer
+        _quantity = 1;
     }
 
     // Method(s)
-    public float computeTotalCost() {
+    public float computeTotalProductCost() {
         // Total cost of this product is computed by multiplying the price per unit and the quantity.
         float totalCost = _pricePerUnit * _quantity;
 
