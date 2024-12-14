@@ -132,5 +132,8 @@ class Program
         Console.WriteLine($"Thank you for shopping, {customer2.GetCustomerName()}! Here is your order:");
         string order2Display = $"Packing Label: \n{order2PackingLabel} \nShipping Label: \n{order2ShippingLabel} \nTotal Price: ${order2TotalPrice:F2}";
         Console.WriteLine(order2Display);
+
+        Console.WriteLine();
+        Console.WriteLine();
     }
 }
