@@ -25,7 +25,7 @@ class Address
     public string addressString() {
         // return a string all of its fields together in one string
 
-        string address = $"{_streetAddress} \n{_city}, {_state} \n{_country}";
+        string address = $"\n\t{_streetAddress} \n\t{_city}, {_state} \n\t{_country}";
         return address;
     }
 

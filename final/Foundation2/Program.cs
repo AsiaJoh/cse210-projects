@@ -108,10 +108,14 @@ class Program
         float order1TotalPrice = order1.TotalPrice();
 
         // First order display
-        Console.WriteLine($"Thank you for shopping, {customer1}! Here is your order:");
+        Console.WriteLine("-----");
+        Console.WriteLine($"Thank you for shopping! Here is your order:");
         string order1Display = $"Packing Label: \n{order1PackingLabel} \nShipping Label: \n{order1ShippingLabel} \nTotal Price: {order1TotalPrice}";
         Console.WriteLine(order1Display);
 
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine();
 
         // -- Second order methods--
 
@@ -125,7 +129,8 @@ class Program
         float order2TotalPrice = order2.TotalPrice();
 
         // Second order display
-        Console.WriteLine($"Thank you for shopping, {customer2}! Here is your order:");
+        Console.WriteLine("-----");
+        Console.WriteLine($"Thank you for shopping! Here is your order:");
         string order2Display = $"Packing Label: \n{order2PackingLabel} \nShipping Label: \n{order2ShippingLabel} \nTotal Price: {order2TotalPrice}";
         Console.WriteLine(order2Display);
     }

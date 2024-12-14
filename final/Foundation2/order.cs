@@ -45,11 +45,11 @@ class Order
         // A packing label should list the name and product id of each product in the order.
 
         // Initialize packing label
-        string packingLabel = $"Product Name(s):\n";
+        string packingLabel = $"\tProduct Name(s):\n\t";
 
         foreach (Product product in _productList) {
             string productName = product.GetProductName();
-            packingLabel += $"{productName}\n";
+            packingLabel += $"{productName}\n\t";
         }
 
         // Return a string for the packing label
@@ -63,7 +63,7 @@ class Order
         string addressString = address.addressString();
 
         // A shipping label should list the name and address of the customer
-        string shippingLabel = $"Customer Name: {_customer.GetCustomerName()} \nCustomer Address: \n{addressString}";
+        string shippingLabel = $"\tCustomer Name: {_customer.GetCustomerName()} \n\tCustomer Address: {addressString}";
 
         // Return a string for the shipping label
         return shippingLabel;
