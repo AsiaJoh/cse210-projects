@@ -6,7 +6,8 @@ class Address
     string _country;
 
     // Constructor(s)
-    public Address() {
+    public Address() 
+    {
         // Assigning the default values
         _streetAddress = "1234 Avenue Lane";
         _city = "Rexburg";
@@ -16,7 +17,8 @@ class Address
 
     // Method(s)
 
-    public string addressString() {
+    public string addressString() 
+    {
         // return a string all of its fields together in one string
 
         string address = $"\n\t{_streetAddress} \n\t{_city}, {_state} \n\t{_country}";
@@ -24,30 +26,39 @@ class Address
     }
 
     // Getter(s)/Setter(s)
-    public string GetStreetAddress() {
+    public string GetStreetAddress() 
+    {
         return _streetAddress;
     }
-    public string GetCity() {
+    public string GetCity() 
+    {
         return _city;
     }
-    public string GetState() {
+    public string GetState() 
+    {
         return _state;
     }
-    public string GetCountry() {
+    public string GetCountry() 
+    {
         return _country;
     }
 
 
-    public void SetStreetAddress(string streetAddress) {
+
+    public void SetStreetAddress(string streetAddress) 
+    {
         _streetAddress = streetAddress;
     }
-    public void SetCity(string city) {
+    public void SetCity(string city) 
+    {
         _city = city;
     }
-    public void SetState(string state) {
+    public void SetState(string state) 
+    {
         _state = state;
     }
-    public void SetCountry(string country) {
+    public void SetCountry(string country) 
+    {
         _country = country;
     }
 }

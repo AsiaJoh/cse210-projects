@@ -7,7 +7,8 @@ class Event {
     string _eventType;
 
     // Constructor(s)
-    public Event(string eventType) {
+    public Event(string eventType) 
+    {
         // Assigning the default values, and eventType
         _eventTitle = "Event Title";
         _description = "Event description.";
@@ -21,56 +22,72 @@ class Event {
     }
 
     // Method(s)
-    public string standardDetails(string eventTitle, string description, string date, string time, Address address) {
+    public string standardDetails(string eventTitle, string description, string date, string time, Address address) 
+    {
 
     }
 
-    public string shortDescription(string eventTitle, string date) {
+    public string shortDescription(string eventTitle, string date) 
+    {
 
     }
 
-    public string fullDetails() {
+    public string fullDetails() 
+    {
         // If statement determines what string is returned, based on the event type, which is known upon conception of the event
 
     }
 
     // Getter(s)/Setter(s)
-    public string GetEventTitle() {
+    public string GetEventTitle() 
+    {
         return _eventTitle;
     }
-    public string GetDescription() {
+    public string GetDescription() 
+    {
         return _description;
     }
-    public string GetDate() {
+    public string GetDate() 
+    {
         return _date;
     }
-    public string GetTime() {
+    public string GetTime() 
+    {
         return _time;
     }
-    public Address GetAddress() {
+    public Address GetAddress() 
+    {
         return _address;
     }
-    public string GetEventType() {
+    public string GetEventType() 
+    {
         return _eventType;
     }
 
 
-    public void SetEventTitle(string eventTitle) {
+
+    public void SetEventTitle(string eventTitle) 
+    {
         _eventTitle = eventTitle;
     }
-    public void SetDescription(string description) {
+    public void SetDescription(string description) 
+    {
         _description = description;
     }
-    public void SetDate(string date) {
+    public void SetDate(string date) 
+    {
         _date = date;
     }
-    public void SetTime(string time) {
+    public void SetTime(string time) 
+    {
         _time = time;
     }
-    public void SetAddress(Address address) {
+    public void SetAddress(Address address) 
+    {
         _address = address;
     }
-    public void SetEventType(string eventType) {
+    public void SetEventType(string eventType) 
+    {
         _eventType = eventType;
     }
 }
