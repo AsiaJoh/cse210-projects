@@ -1,9 +1,9 @@
-class OutdoorGathering : Event
+class OutGathering : Event
 {
     string _weather;
 
     // Constructor(s)
-    public OutdoorGathering(string eventType) : base(eventType) 
+    public OutGathering(string eventType) : base(eventType) 
     {
 
     }

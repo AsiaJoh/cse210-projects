@@ -21,7 +21,7 @@ class Address
     {
         // return a string all of its fields together in one string
 
-        string address = $"\n\t{_streetAddress} \n\t{_city}, {_state} \n\t{_country}";
+        string address = $"\t{_streetAddress} \n\t{_city}, {_state} \n\t{_country}";
         return address;
     }
 

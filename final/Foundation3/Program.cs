@@ -14,7 +14,7 @@ class Program
         lecture.SetMaxCapacity(500);
 
         // Set Lecture's generic variables
-        lecture.SetEventTitle("Edgar Allen Poe - Back From The Dead");
+        lecture.SetEventTitle("Dead Poet Speaks");
         lecture.SetDescription("Edgar Allen Poe, the famous poet, returns from the dead to speak for us once more. He will deliver a lecture about writing and his most famous poems.");
         lecture.SetDate("10/31/2027");
         lecture.SetTime("7:30pm");
@@ -52,25 +52,25 @@ class Program
 
 
         // Constructing the OutdoorGathering Event
-        OutdoorGathering outdoorGathering = new OutdoorGathering("OutdoorGathering");
+        OutGathering outGathering = new OutGathering("OutdoorGathering");
         
         // Set OutdoorGathering's specific variable
-        outdoorGathering.SetWeather("Stormy");
+        outGathering.SetWeather("Stormy");
 
         // Set OutdoorGathering's generic variables
-        outdoorGathering.SetEventTitle("Stormyville Neighborhood Party");
-        outdoorGathering.SetDescription("Come gather for a neighborhood gathering! There will be new friends, food, games, drinks, even a bouncy house!");
-        outdoorGathering.SetDate("06/13/2022");
-        outdoorGathering.SetTime("1:00pm");
+        outGathering.SetEventTitle("Stormyville Neighborhood Party");
+        outGathering.SetDescription("Come gather for a neighborhood gathering! There will be new friends, food, games, drinks, even a bouncy house!");
+        outGathering.SetDate("06/13/2022");
+        outGathering.SetTime("1:00pm");
 
         // Make a reference to OutdoorGathering's address
-        Address outdoorGatheringAddress = outdoorGathering.GetAddress();
+        Address outGatheringAddress = outGathering.GetAddress();
 
         // Set up OutdoorGathering's address
-        outdoorGatheringAddress.SetStreetAddress("7890 NW Rainy Lane");
-        outdoorGatheringAddress.SetCity("Stormyville");
-        outdoorGatheringAddress.SetState("Iowa");
-        outdoorGatheringAddress.SetCountry("USA");
+        outGatheringAddress.SetStreetAddress("7890 NW Rainy Lane");
+        outGatheringAddress.SetCity("Stormyville");
+        outGatheringAddress.SetState("Iowa");
+        outGatheringAddress.SetCountry("USA");
 
         
         // Then, for each event, call each of the methods to generate the marketing messages and output their results to the screen.
@@ -79,42 +79,63 @@ class Program
         Console.WriteLine("--------------------");
         Console.WriteLine("Marketing for the latest Lecture Event:");
         Console.WriteLine("--------------------");
-        Console.WriteLine();
 
-        lecture.StandardDetails();
+        string lectureStandardDetails = lecture.StandardDetails();
 
         string speaker = lecture.GetSpeaker();
         int maxCapacity = lecture.GetMaxCapacity();
-        lecture.FullDetails(speaker, maxCapacity);
+        string lectureFullDetails = lecture.FullDetails(speaker, maxCapacity);
         
-        lecture.ShortDescription();
+        string lectureShortDescription = lecture.ShortDescription();
+
+        Console.WriteLine(lectureStandardDetails);
+        Console.WriteLine("----------");
+        Console.WriteLine(lectureFullDetails);
+        Console.WriteLine("----------");
+        Console.WriteLine(lectureShortDescription);
+        Console.WriteLine("----------");
+        Console.WriteLine();
 
 
         // Reception Event Marketing
         Console.WriteLine("--------------------");
         Console.WriteLine("Marketing for the latest Reception Event:");
         Console.WriteLine("--------------------");
-        Console.WriteLine();
 
-        reception.StandardDetails();
+        string receptionStandardDetails = reception.StandardDetails();
 
         string email = reception.GetRSVP();
-        reception.FullDetails(email);
+        string receptionFullDetails = reception.FullDetails(email);
         
-        reception.ShortDescription();
+        string receptionShortDescription = reception.ShortDescription();
+
+        Console.WriteLine(receptionStandardDetails);
+        Console.WriteLine("----------");
+        Console.WriteLine(receptionFullDetails);
+        Console.WriteLine("----------");
+        Console.WriteLine(receptionShortDescription);
+        Console.WriteLine("----------");
+        Console.WriteLine();
 
 
         // OutdoorGathering Event Marketing
         Console.WriteLine("--------------------");
         Console.WriteLine("Marketing for the latest Outdoor Gathering Event:");
         Console.WriteLine("--------------------");
-        Console.WriteLine();
 
-        outdoorGathering.StandardDetails();
+        string outGatheringStandardDetails = outGathering.StandardDetails();
 
-        string weather = outdoorGathering.GetWeather();
-        outdoorGathering.FullDetails(weather);
+        string weather = outGathering.GetWeather();
+        string outGatheringFullDetails = outGathering.FullDetails(weather);
         
-        outdoorGathering.ShortDescription();
+        string outGatheringShortDescription = outGathering.ShortDescription();
+
+        Console.WriteLine(outGatheringStandardDetails);
+        Console.WriteLine("----------");
+        Console.WriteLine(outGatheringFullDetails);
+        Console.WriteLine("----------");
+        Console.WriteLine(outGatheringShortDescription);
+        Console.WriteLine("----------");
+        Console.WriteLine();
     }
 }
