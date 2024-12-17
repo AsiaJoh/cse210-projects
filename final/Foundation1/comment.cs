@@ -18,7 +18,6 @@ class Comment
         Console.WriteLine(comment);
     }
 
-
     // Getters/Setters
     public string GetName() {
         return _name;
@@ -26,6 +25,8 @@ class Comment
     public string GetText() {
         return _text;
     }
+
+
     public void SetName(string name) {
         _name = name;
     }

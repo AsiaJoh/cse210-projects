@@ -17,50 +17,59 @@ class Video
     }
 
     // Methods
-    public int CommentsCount() {
+    public int CommentsCount() 
+    {
         // Return the number of comments
         int numComments = _comments.Count;
         return numComments;
     }
 
-    public void DisplayVideo() {
+    public void DisplayVideo() 
+    {
         // Display the title, author, length, number of comments (from the method) 
         int numComments = CommentsCount(); 
         string videoData = $"Video Title: {_title} \nVideo Author: {_author} \nVideo Length: {_length} minute(s) \nVideo Comment Count: {numComments}\n";
         Console.WriteLine(videoData);
     }
 
-    public void DisplayCommentsList() {
+    public void DisplayCommentsList() 
+    {
         // List out all of the comments for that video.
         foreach (Comment comment in _comments) { 
             comment.DisplayComment();
         }
     }
 
-    public void AppendComment(Comment comment) {
+    public void AppendComment(Comment comment) 
+    {
         _comments.Add(comment);
     }
 
-
-
     // Getters/Setters
-    public string GetTitle() {
+    public string GetTitle() 
+    {
         return _title;
     }
-    public string GetAuthor() {
+    public string GetAuthor() 
+    {
         return _author;
     }
-    public int GetLength() {
+    public int GetLength() 
+    {
         return _length;
     }
 
-    public void SetTitle(string title) {
+
+    public void SetTitle(string title) 
+    {
         _title = title;
     }
-    public void SetAuthor(string author) {
+    public void SetAuthor(string author) 
+    {
         _author = author;
     }
-    public void SetLength(int length) {
+    public void SetLength(int length) 
+    {
         _length = length;
     }
 }
