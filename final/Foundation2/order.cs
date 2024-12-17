@@ -12,14 +12,15 @@ class Order
     }
 
     // Methods
-    public float TotalPrice() {
+    public float TotalPrice() 
+    {
         // Calculate the total cost of the order
         // The total price is calculated as the sum of the total cost of each product plus a one-time shipping cost.
 
         float baseCostSum = 0;
 
         foreach (Product product in _productList) {
-            float baseCost = product.computeTotalProductCost();
+            float baseCost = product.ComputeTotalProductCost();
             baseCostSum += baseCost;
         }
 
@@ -41,7 +42,8 @@ class Order
         return totalCost;
     }
 
-    public string PackingLabel() {
+    public string PackingLabel() 
+    {
         // A packing label should list the name and product id of each product in the order.
 
         // Initialize packing label
@@ -57,11 +59,12 @@ class Order
         return packingLabel;
     }
 
-    public string ShippingLabel() {
+    public string ShippingLabel() 
+    {
         // Retrieve the customer's address
         Address address = _customer.GetAddress();
 
-        string addressString = address.addressString();
+        string addressString = address.AddressString();
 
         // A shipping label should list the name and address of the customer
         string shippingLabel = $"\tCustomer Name: {_customer.GetCustomerName()} \n\tCustomer Address: {addressString}";
@@ -70,24 +73,29 @@ class Order
         return shippingLabel;
     }
 
-    public void addProductToList(Product product) {
+    public void AddProductToList(Product product) 
+    {
         // Take a product and add it to the customer's list
         _productList.Add(product);
     }
 
 
     // Getters/Setters
-    public Customer GetCustomer() {
+    public Customer GetCustomer() 
+    {
         return _customer;
     }
-    public void SetCustomer(Customer customer) {
+    public void SetCustomer(Customer customer)
+    {
         _customer = customer;
     }
 
-    public List<Product> GetProductList() {
+    public List<Product> GetProductList() 
+    {
         return _productList;
     }
-    public void SetProductList(List<Product> productList) {
+    public void SetProductList(List<Product> productList) 
+    {
         _productList = productList;
     }
 }

@@ -16,7 +16,8 @@ class Product
     }
 
     // Method(s)
-    public float computeTotalProductCost() {
+    public float ComputeTotalProductCost() 
+    {
         // Total cost of this product is computed by multiplying the price per unit and the quantity.
         float totalCost = _pricePerUnit * _quantity;
 
@@ -24,31 +25,38 @@ class Product
     }
 
     // Getters/Setters
-    public string GetProductName() {
+    public string GetProductName() 
+    {
         return _productName;
     }
-    public int GetProductID() {
+    public int GetProductID() 
+    {
         return _productID;
     }
-    public float GetPricePerUnit() {
+    public float GetPricePerUnit() 
+    {
         return _pricePerUnit;
     }
-    public int GetQuantity() {
+    public int GetQuantity() 
+    {
         return _quantity;
     }
 
 
-    public void SetProductName(string productName) {
+    public void SetProductName(string productName) 
+    {
         _productName = productName;
     }
-    public void SetProductID(int productID) {
+    public void SetProductID(int productID) 
+    {
         _productID = productID;
     }
-    public void SetPricePerUnit(float pricePerUnit) {
+    public void SetPricePerUnit(float pricePerUnit) 
+    {
         _pricePerUnit = pricePerUnit;
     }
-    public void SetQuantity(int quantity) {
+    public void SetQuantity(int quantity) 
+    {
         _quantity = quantity;
     }
-
 }

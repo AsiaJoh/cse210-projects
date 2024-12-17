@@ -32,7 +32,7 @@ class Program
         stuffedAnimal.SetPricePerUnit(10.5f);
         stuffedAnimal.SetQuantity(3);
         // Add this product to the customer's list
-        order1.addProductToList(stuffedAnimal);
+        order1.AddProductToList(stuffedAnimal);
 
         // Make first order's second product
         Product actionFigure = new Product();
@@ -42,7 +42,7 @@ class Program
         actionFigure.SetPricePerUnit(5f);
         actionFigure.SetQuantity(1);
         // Add this product to the customer's list
-        order1.addProductToList(actionFigure);
+        order1.AddProductToList(actionFigure);
 
 
         // -- Second Order Creation --
@@ -71,7 +71,7 @@ class Program
         polishedRocks.SetPricePerUnit(15f);
         polishedRocks.SetQuantity(5);
         // Add this product to the customer's list
-        order2.addProductToList(polishedRocks);
+        order2.AddProductToList(polishedRocks);
 
         // Make second order's second product
         Product hairbrush = new Product();
@@ -81,7 +81,7 @@ class Program
         hairbrush.SetPricePerUnit(20f);
         hairbrush.SetQuantity(1);
         // Add this product to the customer's list
-        order2.addProductToList(hairbrush);
+        order2.AddProductToList(hairbrush);
 
         // Make second order's third product
         Product glowsticks = new Product();
@@ -91,7 +91,7 @@ class Program
         glowsticks.SetPricePerUnit(5f);
         glowsticks.SetQuantity(4);
         // Add this product to the customer's list
-        order2.addProductToList(glowsticks);
+        order2.AddProductToList(glowsticks);
 
 
         // Call the methods to get the packing label, the shipping label, and the total price of the order, and display the results of these methods.

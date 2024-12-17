@@ -12,7 +12,8 @@ class Customer
     }
 
     // Method(s)
-    public bool USALiving(Address address) {
+    public bool USALiving(Address address) 
+    {
         // Returns a boolean true/false - true if you live in the USA, false otherwise
         // Use Address class for this
 
@@ -20,19 +21,23 @@ class Customer
     }
 
     // Getters/Setters
-    public string GetCustomerName() {
+    public string GetCustomerName() 
+    {
         return _customerName;
     }
 
-    public void SetCustomerName(string customerName) {
+    public void SetCustomerName(string customerName) 
+    {
         _customerName = customerName;
     }
 
-    public Address GetAddress() {
+    public Address GetAddress() 
+    {
         return _address;
     }
 
-    public void SetAddress(Address address) {
+    public void SetAddress(Address address) 
+    {
         _address = address;
     }
 }
