@@ -22,16 +22,16 @@ class Event {
     }
 
     // Method(s)
-    public string standardDetails() 
+    public string StandardDetails() 
     {
-        string address = _address.addressString();
+        string address = _address.AddressString();
 
         string standardDetails = $"Standard {_eventTitle} Event Details \nDescription: {_description} \nDate: {_date} \nTime: {_time} \nAddress:\n{address}";
 
         return standardDetails;
     }
 
-    public string fullDetails(string specificInfo1, int specificInfo2 = 0) 
+    public string FullDetails(string specificInfo1, int specificInfo2 = 0) 
     { // List the same information as standard, plus information specifc to each event
         
         // The two specificInfo's will be transformed into whatever each event needs via if-statement
@@ -41,7 +41,7 @@ class Event {
         string specificDetails = "";
 
         // Call this to get the standard info, and then concatenate it with the additional full details later
-        string standardInfo = standardDetails();
+        string standardInfo = StandardDetails();
 
         // Use an if statement determines what string is returned, based on the event type, which is known upon conception of the event
         if (_eventType == "Lecture")
@@ -76,7 +76,7 @@ class Event {
         return fullDetails;
     }
 
-    public string shortDescription() 
+    public string ShortDescription() 
     {
         string shortDescription = $"Short {_eventTitle} Event Description \nEvent Type: {_eventType} \nEvent Date: {_date}";
 

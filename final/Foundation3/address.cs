@@ -17,7 +17,7 @@ class Address
 
     // Method(s)
 
-    public string addressString() 
+    public string AddressString() 
     {
         // return a string all of its fields together in one string
 
