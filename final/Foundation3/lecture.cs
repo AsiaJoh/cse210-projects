@@ -1,7 +1,7 @@
 class Lecture : Event
 {
     string _speaker;
-    string _maxCapacity;
+    int _maxCapacity;
 
     // Constructor(s)
     public Lecture(string eventType) : base(eventType) 
@@ -16,7 +16,7 @@ class Lecture : Event
     {
         return _speaker;
     }
-    public string GetMaxCapacity()
+    public int GetMaxCapacity()
     {
         return _maxCapacity;
     }
@@ -27,7 +27,7 @@ class Lecture : Event
     {
         _speaker = speaker;
     }
-    public void SetMaxCapacity(string maxCapacity)
+    public void SetMaxCapacity(int maxCapacity)
     {
         _maxCapacity = maxCapacity;
     }

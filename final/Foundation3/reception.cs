@@ -1,7 +1,6 @@
 class Reception : Event
 {
-    bool _rsvp;
-    bool _registriation;
+    string _rsvp;
 
     // Constructor(s)
     public Reception(string eventType) : base(eventType) 
@@ -12,23 +11,16 @@ class Reception : Event
     // Method(s)
 
     // Getter(s)/Setter(s)
-    public bool GetRSVP()
+    public string GetRSVP()
     {
         return _rsvp;
     }
-    public bool GetRegistration()
-    {
-        return _registriation;
-    }
 
 
 
-    public void SetRSVP(bool rsvp)
+    public void SetRSVP(string rsvp)
     {
         _rsvp = rsvp;
     }
-    public void SetRegistration(bool registration)
-    {
-        _registriation = registration;
-    }
+    
 }

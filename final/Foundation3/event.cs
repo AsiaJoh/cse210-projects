@@ -22,20 +22,65 @@ class Event {
     }
 
     // Method(s)
-    public string standardDetails(string eventTitle, string description, string date, string time, Address address) 
+    public string standardDetails() 
     {
+        string address = _address.addressString();
 
+        string standardDetails = $"Standard {_eventTitle} Event Details \nDescription: {_description} \nDate: {_date} \nTime: {_time} \nAddress:\n{address}";
+
+        return standardDetails;
     }
 
-    public string shortDescription(string eventTitle, string date) 
-    {
+    public string fullDetails(string specificInfo1, int specificInfo2 = 0) 
+    { // List the same information as standard, plus information specifc to each event
+        
+        // The two specificInfo's will be transformed into whatever each event needs via if-statement
+        // The second parameter is optional/has a default as a int because only the Lecture events require it to exist
 
+        // Initialize specificDetails here so we only do that piece once
+        string specificDetails = "";
+
+        // Call this to get the standard info, and then concatenate it with the additional full details later
+        string standardInfo = standardDetails();
+
+        // Use an if statement determines what string is returned, based on the event type, which is known upon conception of the event
+        if (_eventType == "Lecture")
+        { 
+            // Specific Info: speaker name and capacity
+            string speaker = specificInfo1;
+            int maxCapacity = specificInfo2;
+
+            specificDetails = $"\n\nAdditional Information \nSpeaker Name: {speaker} \nMax Capacity: {maxCapacity}";
+        }
+        else if (_eventType == "Reception")
+        {
+            // Specific Info: email for RSVP
+            string email = specificInfo1;
+
+            specificDetails = $"\n\nAdditional Information \nEmail for RSVP: {email}";
+        }
+        else if (_eventType == "OutdoorGathering")
+        {
+            // Specific Info: weather statement
+            string weather = specificInfo1;
+
+            specificDetails = $"\n\nAdditional Information \nPredicted Weather: {weather}";
+        }
+        else
+        {
+            specificDetails = "\n\nAdditional specific details could not be given because there was a misspelling, or invalid entry, in the event type.";
+        }
+
+        string fullDetails = standardInfo + specificDetails;
+
+        return fullDetails;
     }
 
-    public string fullDetails() 
+    public string shortDescription() 
     {
-        // If statement determines what string is returned, based on the event type, which is known upon conception of the event
+        string shortDescription = $"Short {_eventTitle} Event Description \nEvent Type: {_eventType} \nEvent Date: {_date}";
 
+        return shortDescription;
     }
 
     // Getter(s)/Setter(s)
