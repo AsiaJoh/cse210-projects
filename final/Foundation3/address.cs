@@ -15,12 +15,6 @@ class Address
     }
 
     // Method(s)
-    public bool USA() {
-        // Determine if the address is in the USA
-
-        // I believe this returns true when the statement is true, and false otherwise
-        return "USA" == _country;
-    }
 
     public string addressString() {
         // return a string all of its fields together in one string
