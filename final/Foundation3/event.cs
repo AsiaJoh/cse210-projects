@@ -26,7 +26,7 @@ class Event {
     {
         string address = _address.AddressString();
 
-        string standardDetails = $"Standard {_eventTitle} Event Details \nDescription: {_description} \nDate: {_date} \nTime: {_time} \nAddress:\n{address}";
+        string standardDetails = $"{_eventTitle} Event - Standard Details \nDescription: {_description} \nDate: {_date} \nTime: {_time} \nAddress:\n{address}";
 
         return standardDetails;
     }
@@ -59,7 +59,7 @@ class Event {
 
             specificDetails = $"\n\nAdditional Information \nEmail for RSVP: {email}";
         }
-        else if (_eventType == "OutdoorGathering")
+        else if (_eventType == "OutGathering")
         {
             // Specific Info: weather statement
             string weather = specificInfo1;
@@ -78,7 +78,7 @@ class Event {
 
     public string ShortDescription() 
     {
-        string shortDescription = $"Short {_eventTitle} Event Description \nEvent Type: {_eventType} \nEvent Date: {_date}";
+        string shortDescription = $"{_eventTitle} Event - Short Description \nEvent Type: {_eventType} \nEvent Date: {_date}";
 
         return shortDescription;
     }

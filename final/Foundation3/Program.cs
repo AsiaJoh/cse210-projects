@@ -52,7 +52,7 @@ class Program
 
 
         // Constructing the OutdoorGathering Event
-        OutGathering outGathering = new OutGathering("OutdoorGathering");
+        OutGathering outGathering = new OutGathering("OutGathering");
         
         // Set OutdoorGathering's specific variable
         outGathering.SetWeather("Stormy");
