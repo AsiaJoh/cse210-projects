@@ -1,9 +1,9 @@
-abstract class Activity
+public abstract class Activity
 {
     string _date;
-    int _timeLength;
+    // int _timeLength;
     string _activityType;
-    string _time;
+    float _time;
     float _rate;
 
     // Constructor(s) will only be used by derived classes because this class is abstract
@@ -13,15 +13,24 @@ abstract class Activity
     }
 
     // Method(s)
-    public abstract float CalcDistance();
+    public abstract float CalcDistance(float distance);
 
-    public abstract float CalcSpeed();
+    public abstract float CalcSpeed(float distance, float time);
 
-    public abstract float CalcPace();
+    public abstract float CalcPace(float distance, float time);
 
-    public string Summary(float distance, float speed) 
+    public string Summary(float distance, float time) 
     {
+        // Produce a string with all the summary information
 
+        // Get information from the methods
+        float distanceInfo = CalcDistance(distance);
+        float speedInfo = CalcSpeed(distance, time);
+        float paceInfo = CalcPace(distance, time);
+
+        string summary = $"Activity Summary: \n{_date} {_activityType} ({time})- Distance {distanceInfo} km, Speed: {speedInfo} kph, Pace: {paceInfo} min per km";
+
+        return summary;
     }
 
     // Getter(s)/Setter(s)
