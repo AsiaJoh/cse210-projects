@@ -6,7 +6,11 @@ abstract class Activity
     string _time;
     float _rate;
 
-    // No constructor(s) because its an abstract class
+    // Constructor(s) will only be used by derived classes because this class is abstract
+    public Activity()
+    {
+
+    }
 
     // Method(s)
     public abstract float CalcDistance();
