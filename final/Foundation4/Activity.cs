@@ -23,7 +23,7 @@ public abstract class Activity
 
     public abstract float CalcPace(float distance, float time);
 
-    public virtual string Summary() 
+    public string RetrieveSummary() 
     {
         // Produce a string with all the summary information
 
@@ -32,7 +32,7 @@ public abstract class Activity
         float speedInfo = CalcSpeed(_distance, _time);
         float paceInfo = CalcPace(_distance, _time);
 
-        string summary = $"Activity Summary: \n{_date} {_activityType} ({_time})- Distance {distanceInfo} km, Speed: {speedInfo} kph, Pace: {paceInfo} min per km";
+        string summary = $"Activity Summary: \n{_date} {_activityType} ({_time:F0} min)- Distance {distanceInfo:F1} km, Speed: {speedInfo:F1} kph, Pace: {paceInfo:F2} min per km";
 
         return summary;
     }

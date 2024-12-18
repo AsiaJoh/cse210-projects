@@ -14,9 +14,9 @@ class Program
         Running running = new Running();
 
         // Set the variables
-        running.SetDate("03 Dec 2003");
-        running.SetDistance(2.2f);
-        running.SetTime(2.5f);
+        running.SetDate("03 Dec 2012");
+        running.SetDistance(5.2f);
+        running.SetTime(60.10f);
 
         // Add the activity to the list
         activitiesList.Add(running);
@@ -26,9 +26,9 @@ class Program
         Cycling cycling = new Cycling();
 
         // Set the variables
-        cycling.SetDate("07 June 2018");
-        cycling.SetDistance(15);
-        cycling.SetTime(5.50f);
+        cycling.SetDate("07 June 2013");
+        cycling.SetDistance(31.5f);
+        cycling.SetTime(122.1f);
 
         // Add the activity to the list
         activitiesList.Add(cycling);
@@ -39,17 +39,19 @@ class Program
 
         // Set the variables
         swimming.SetDate("10 Oct 2013");
-        swimming.SetDistance(10.01f);
-        swimming.SetTime(1.34f);
+        swimming.SetDistance(20f);
+        swimming.SetTime(10.5f);
 
         // Add the activity to the list
         activitiesList.Add(swimming);
 
 
         // Then iterate through this list and call the GetSummary method on each item and display the results.
+        Console.WriteLine("Here are all the activities you've completed!");
+
         foreach (Activity activity in activitiesList)
         {
-            string summaryString = activity.GetSummary();
+            string summaryString = activity.RetrieveSummary();
 
             Console.WriteLine(summaryString);
             Console.WriteLine();
