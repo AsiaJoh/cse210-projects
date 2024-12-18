@@ -1,7 +1,5 @@
 public class Running : Activity
 {
-    // No member variables for now...
-
     // Constructor(s)
     public Running() : base()
     {
@@ -14,16 +12,18 @@ public class Running : Activity
         // Calculate the distance run. Running happens along a path in a linear fashion, so just... return distance run.
         // Units are km
 
-        // Retrieve and return the distance run
+        // Correct and return the distance run
+        SetDistance(distanceRan);
+
         return distanceRan;
     }
 
-    public override float CalcSpeed(float distanceRan, float hours)
+    public override float CalcSpeed(float distanceRan, float minutes)
     {
         // Calculate the speed at which you ran. Speed is distance / time.
-        // Units are kph
+        // Units are km
 
-        float runningSpeed = distanceRan / hours;
+        float runningSpeed = (distanceRan / minutes) * 60;
 
         // Retrieve and return the running speed
         return runningSpeed;

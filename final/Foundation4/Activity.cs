@@ -3,13 +3,17 @@ public abstract class Activity
     string _date;
     // int _timeLength;
     string _activityType;
+    float _distance;
     float _time;
-    float _rate;
 
     // Constructor(s) will only be used by derived classes because this class is abstract
     public Activity()
     {
-
+        // Create default values
+        _date = "17 Dec 2024";
+        _activityType = "n/a";
+        _distance = 1.0f;
+        _time = 1.5f;
     }
 
     // Method(s)
@@ -19,16 +23,16 @@ public abstract class Activity
 
     public abstract float CalcPace(float distance, float time);
 
-    public string Summary(float distance, float time) 
+    public virtual string Summary() 
     {
         // Produce a string with all the summary information
 
         // Get information from the methods
-        float distanceInfo = CalcDistance(distance);
-        float speedInfo = CalcSpeed(distance, time);
-        float paceInfo = CalcPace(distance, time);
+        float distanceInfo = CalcDistance(_distance);
+        float speedInfo = CalcSpeed(_distance, _time);
+        float paceInfo = CalcPace(_distance, _time);
 
-        string summary = $"Activity Summary: \n{_date} {_activityType} ({time})- Distance {distanceInfo} km, Speed: {speedInfo} kph, Pace: {paceInfo} min per km";
+        string summary = $"Activity Summary: \n{_date} {_activityType} ({_time})- Distance {distanceInfo} km, Speed: {speedInfo} kph, Pace: {paceInfo} min per km";
 
         return summary;
     }
@@ -38,21 +42,18 @@ public abstract class Activity
     {
         return _date;
     }
-    public int GetTimeLength()
-    {
-        return _timeLength;
-    }
+
     public string GetActivityType() 
     {
         return _activityType;
     }
-    public string GetTime()
+    public float GetDistance()
+    {
+        return _distance;
+    }
+    public float GetTime()
     {
         return _time;
-    }
-    public float GetRate()
-    {
-        return _rate;
     }
 
 
@@ -60,20 +61,16 @@ public abstract class Activity
     {
         _date = date;
     }
-    public void SetTimeLength(int timeLength)
-    {
-        _timeLength = timeLength;
-    }
     public void SetActivityType(string activityType) 
     {
          _activityType = activityType;
     }
-    public void SetTime(string time)
+    public void SetDistance(float distance)
+    {
+        _distance = distance;
+    }
+    public void SetTime(float time)
     {
         _time = time;
-    }
-    public void SetRate(float rate)
-    {
-        _rate = rate;
     }
 }

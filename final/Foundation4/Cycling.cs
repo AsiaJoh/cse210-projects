@@ -1,7 +1,5 @@
 public class Cycling : Activity
 {
-    // No member variables for now...
-
     // Constructor(s)
     public Cycling() : base()
     {

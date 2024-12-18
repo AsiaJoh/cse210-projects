@@ -1,7 +1,5 @@
 public class Swimming : Activity
 {
-    // float _poolLength;
-
     // Constructor(s)
     public Swimming() : base()
     {
@@ -43,21 +41,4 @@ public class Swimming : Activity
 
         return swimmingPace;
     }
-
-    // public int CalcNumLaps()
-    // {
-
-    // }
-
-    // Getter(s)/Setter(s)
-    // public float GetPoolLength()
-    // {
-    //     return _poolLength;
-    // }
-
-
-    // public void SetPoolLength(float poolLength)
-    // {
-    //     _poolLength = poolLength;
-    // }
 }
