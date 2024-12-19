@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 
 // I decided to show creativity by adding an additional option to the menu - a log of how many times you've run each activity.
 
@@ -27,30 +28,27 @@ class Program
 
             if (userInput == 1)
             {
+                breathingCounter += 1;
                 Breathing breathingActivity = new Breathing();
                 breathingActivity.SetName("Breathing Activity");
 
                 breathingActivity.BreathingActivity();
-                
-                breathingCounter += 1;
             }
             else if (userInput == 2)
             {
-                Reflecting reflectingActivity = new Reflecting();
+                reflectingCounter += 1;
+                Reflection reflectingActivity = new Reflection();
                 reflectingActivity.SetName("Breathing Activity");
 
                 reflectingActivity.ReflectingActivity();
-
-                reflectingCounter += 1;
             }
             else if (userInput == 3)
             {
+                listingCounter += 1;
                 Listing listingActivity = new Listing();
                 listingActivity.SetName("Breathing Activity");
 
                 listingActivity.ListingActivity();
-
-                listingCounter += 1;
             }
             else if (userInput == 4)
             {

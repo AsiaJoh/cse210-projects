@@ -27,6 +27,24 @@ class Reflection : Activity
 
         Console.Clear();
 
+        // select a random prompt to show the user
+        Random random = new Random();
+
+        int randomIndex = random.Next(_promptList.Count);
+
+        string randomPrompt = _promptList[randomIndex];
+        Thread.Sleep(300);
+        Console.WriteLine("Consider the following prompt:");
+        Thread.Sleep(300);
+        Console.WriteLine($" --- {randomPrompt} --- ");
+        Thread.Sleep(300);
+        Console.WriteLine("When you have something in mind, press enter to continue.");
+        Console.ReadLine();
+
+        // After displaying the prompt, the program should ask the to reflect on questions that relate to this experience. These questions should be pulled from a list
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        PauseDisplay();
+
         // Activity should continue until duration decided is over.
         // Set timer for current activity
         bool finished = false;
@@ -37,20 +55,6 @@ class Reflection : Activity
         DateTime futureTime = startTime.AddSeconds(duration);
 
         Thread.Sleep(300);
-
-        // select a random prompt to show the user
-        Random random = new Random();
-
-        int randomIndex = random.Next(_promptList.Count);
-
-        string randomPrompt = _promptList[randomIndex];
-        Thread.Sleep(300);
-        Console.WriteLine(randomPrompt);
-        Thread.Sleep(300);
-
-        // After displaying the prompt, the program should ask the to reflect on questions that relate to this experience. These questions should be pulled from a list
-        Console.WriteLine("Reflect on these questions in relation to the prompt");
-
 
         DateTime currentTime = DateTime.Now;
         while (!finished)

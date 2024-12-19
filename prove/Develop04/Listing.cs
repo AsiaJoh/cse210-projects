@@ -42,12 +42,13 @@ class Listing : Activity
 
         string randomPrompt = _promptList[randomIndex];
         Thread.Sleep(300);
-        Console.WriteLine(randomPrompt);
-        Thread.Sleep(300);
-
         // After displaying the prompt, the program should ask the to reflect on questions that relate to this experience. These questions should be pulled from a list
-        Console.WriteLine("Begin thinking about the prompt, and then start listing answers or thoughts.");
-        Thread.Sleep(500);
+        Console.WriteLine("List as many responses as you can to the following prompt: ");
+        Console.WriteLine(randomPrompt);
+        PauseDisplay();
+
+        Console.WriteLine("You may begin in: ");
+        Thread.Sleep(300);
         Console.Write("3");
         Thread.Sleep(1000);
         Console.Write("\b \b");
