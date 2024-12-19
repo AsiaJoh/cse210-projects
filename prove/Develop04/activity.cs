@@ -3,24 +3,24 @@ class Activity
     string _name;
     string _description = "default description woo";
     int _duration;
-    string _endMessage;
+    // string _endMessage;
 
     //Constructor(s)
-    public Activity(string name)
+    public Activity()
     {
-        // Assigning the values
-        _name = name;
+        
     }
-    public Activity(string name, string time)
-    {
-        // Assigning the values
-        _name = name;
-        // time;
-    }
+    // public Activity(string name, string time)
+    // {
+    //     // Assigning the values
+    //     _name = name;
+    //     // time;
+    // }
 
 
     //Methods
-    public void BeginningMessage() {
+    public void BeginningMessage() 
+    {
         // Determine specific description
         if (_name == "Breathing Activity") {
             _description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
@@ -42,25 +42,113 @@ class Activity
         _duration = int.Parse(Console.ReadLine());
     }
 
-    public void EndingMessage() {
+    public void EndingMessage() 
+    {
         // Put together the ending message
         string message = $"Well done!! \n\nYou have completed {_duration} seconds of the {_name}.";
         Console.WriteLine(message);
         
-        // Loop this until a mini timer reaches zero
-        
-        // Little animation
-        Console.Write("+");
-        Thread.Sleep(500);
-        Console.Write("\b \b"); // Erase the prior character, and prep for the next (\b works like the left arrow key)
-        Console.Write("x"); // Replace with this character
+        bool finished = false;
+
+        // Loop the little animation until a mini timer reaches zero
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5);
+
+        Thread.Sleep(300);
+
+        DateTime currentTime = DateTime.Now;
+        while (!finished)
+        {
+            if (currentTime < futureTime)
+            {
+                // Little animation
+                Console.Write("+");
+                Thread.Sleep(1000);
+                Console.Write("\b \b"); // Erase the prior character, and prep for the next (\b works like the left arrow key)
+                Console.Write("x"); // Replace with this character
+                Thread.Sleep(1000);
+                Console.Write("\b \b"); // Erase the prior character, and prep for the next (\b works like the left arrow key)
+            }
+            else
+            {
+                finished = true;
+            }
+            currentTime = DateTime.Now;
+        }
     }
 
-    public void Pause() {
-        // Pause the current activity and display animation
+    public void PauseDisplay() 
+    {
+        // Pause for a moment and display a little animation
+        bool finished = false;
+
+        // Loop the little animation until a mini timer reaches zero
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5);
+
+        Thread.Sleep(300);
+
+        DateTime currentTime = DateTime.Now;
+        while (!finished)
+        {
+            if (currentTime < futureTime)
+            {
+                // Little animation
+                Console.Write("+");
+                Thread.Sleep(1000);
+                Console.Write("\b \b"); // Erase the prior character, and prep for the next (\b works like the left arrow key)
+                Console.Write("x"); // Replace with this character
+                Thread.Sleep(1000);
+                Console.Write("\b \b"); // Erase the prior character, and prep for the next (\b works like the left arrow key)
+            }
+            else
+            {
+                finished = true;
+            }
+            currentTime = DateTime.Now;
+        }
     }
 
-    public void Timer() {
+    public bool Timer() 
+    {
         // Set timer for current activity
+        bool finished = false;
+
+        int placeholder = 0;
+
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_duration);
+
+        Thread.Sleep(300);
+
+        DateTime currentTime = DateTime.Now;
+        while (!finished)
+        {
+            if (currentTime < futureTime)
+            {
+                placeholder = 0;
+            }
+            else
+            {
+                finished = true;
+            }
+            currentTime = DateTime.Now;
+        }
+
+
+        // Return true, indicating the timer is finished
+        return true;
+    }
+
+    // Getters/Setters
+    public string GetName()
+    {
+        return _name;
+    }
+
+
+    public void SetName(string name)
+    {
+        _name = name;
     }
 }
