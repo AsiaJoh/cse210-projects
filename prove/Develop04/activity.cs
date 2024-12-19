@@ -3,7 +3,6 @@ class Activity
     string _name;
     string _description = "default description woo";
     int _duration;
-    // string _endMessage;
 
     //Constructor(s)
     public Activity()
@@ -110,7 +109,7 @@ class Activity
     }
 
     public bool Timer() 
-    {
+    { // I know I should be calling this function in the activities instead of giving each their own timer, but as of now I don't know how to get the code to run simultaneously with a separate timer.
         // Set timer for current activity
         bool finished = false;
 
@@ -135,7 +134,6 @@ class Activity
             currentTime = DateTime.Now;
         }
 
-
         // Return true, indicating the timer is finished
         return true;
     }
@@ -144,6 +142,10 @@ class Activity
     public string GetName()
     {
         return _name;
+    }
+    public int GetDuration()
+    {
+        return _duration;
     }
 
 

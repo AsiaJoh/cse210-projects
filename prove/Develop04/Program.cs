@@ -1,17 +1,26 @@
 using System;
 
+// I decided to show creativity by adding an additional option to the menu - a log of how many times you've run each activity.
+
 class Program
 {
     static void Main(string[] args)
     {
+
+        int breathingCounter = 0;
+        int reflectingCounter = 0;
+        int listingCounter = 0;
+
         bool quit = false;
         while (!quit)
         {
+            Console.Clear();
             Console.WriteLine("Menu Options:");
-            Console.WriteLine("\n1. Start breathing activity");
-            Console.WriteLine("\n2. Start reflecting activity");
-            Console.WriteLine("\n3. Start listing activity");
-            Console.WriteLine("\n4. Quit");
+            Console.WriteLine("\t1. Start breathing activity");
+            Console.WriteLine("\t2. Start reflecting activity");
+            Console.WriteLine("\t3. Start listing activity");
+            Console.WriteLine("\t4. View activity log");
+            Console.WriteLine("\t5. Quit");
 
             Console.Write("Select a choice from the menu: ");
             int userInput = int.Parse(Console.ReadLine());
@@ -22,6 +31,41 @@ class Program
                 breathingActivity.SetName("Breathing Activity");
 
                 breathingActivity.BreathingActivity();
+                
+                breathingCounter += 1;
+            }
+            else if (userInput == 2)
+            {
+                Reflecting reflectingActivity = new Reflecting();
+                reflectingActivity.SetName("Breathing Activity");
+
+                reflectingActivity.ReflectingActivity();
+
+                reflectingCounter += 1;
+            }
+            else if (userInput == 3)
+            {
+                Listing listingActivity = new Listing();
+                listingActivity.SetName("Breathing Activity");
+
+                listingActivity.ListingActivity();
+
+                listingCounter += 1;
+            }
+            else if (userInput == 4)
+            {
+                Console.Clear();
+                Console.WriteLine("Here is a log of how many times you've done each activity: ");
+                Console.WriteLine($"Breathing Activity: {breathingCounter} times");
+                Console.WriteLine($"Reflection Activity: {breathingCounter} times");
+                Console.WriteLine($"Listing Activity: {breathingCounter} times");
+                
+                Activity activity = new Activity();
+                activity.PauseDisplay();
+            }
+            else
+            {
+                quit = true;
             }
         }   
     }
